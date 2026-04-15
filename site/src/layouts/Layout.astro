@@ -14,24 +14,26 @@ const { title } = Astro.props;
     <title>{title}</title>
     <style is:global>
       :root {
-        --bg: #0A0A0A;
-        --bg-card: #141414;
-        --bg-card-hover: #1A1A1A;
-        --border: #2A2A2A;
-        --text: #E0E0E0;
-        --text-muted: #888888;
-        --text-dim: #555555;
-        --accent: #6366F1;
-        --accent-hover: #818CF8;
-        --white: #FFFFFF;
+        --black: #000000;
+        --near-black: #1d1d1f;
+        --light-bg: #f5f5f7;
+        --white: #ffffff;
+        --blue: #0071e3;
+        --blue-link: #0066cc;
+        --blue-bright: #2997ff;
+        --text-80: rgba(0, 0, 0, 0.8);
+        --text-48: rgba(0, 0, 0, 0.48);
+        --dark-surface: #1d1d1f;
+        --nav-bg: rgba(0, 0, 0, 0.8);
       }
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.6;
-        min-height: 100vh;
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        background: var(--white);
+        color: var(--near-black);
+        line-height: 1.47;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
       a { color: inherit; text-decoration: none; }
     </style>
@@ -40,18 +42,17 @@ const { title } = Astro.props;
     <!-- Password Gate -->
     <div id="auth-gate">
       <div class="auth-box">
-        <div class="auth-icon">▦</div>
-        <h1>slide-design-md</h1>
-        <p>閲覧にはパスワードが必要です</p>
+        <h1 class="auth-title">slide-design-md</h1>
+        <p class="auth-sub">Slide design systems for AI agents.</p>
         <form id="auth-form">
-          <input type="password" id="auth-input" placeholder="パスワードを入力" autocomplete="off" />
-          <button type="submit">Enter</button>
+          <input type="password" id="auth-input" placeholder="Enter password" autocomplete="off" />
+          <button type="submit">Continue</button>
         </form>
         <p id="auth-error" class="auth-error"></p>
       </div>
     </div>
 
-    <!-- Main Content (hidden until authenticated) -->
+    <!-- Main Content -->
     <div id="main-content" style="display:none;">
       <slot />
     </div>
@@ -62,91 +63,91 @@ const { title } = Astro.props;
         align-items: center;
         justify-content: center;
         min-height: 100vh;
-        background: var(--bg);
+        background: var(--black);
       }
       .auth-box {
         text-align: center;
-        max-width: 360px;
+        max-width: 380px;
         padding: 2rem;
       }
-      .auth-icon {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        color: var(--accent);
-      }
-      .auth-box h1 {
-        font-size: 1.8rem;
+      .auth-title {
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 1.1;
+        letter-spacing: -0.5px;
         color: var(--white);
         margin-bottom: 0.5rem;
-        letter-spacing: -0.02em;
       }
-      .auth-box > p {
-        color: var(--text-muted);
-        font-size: 0.9rem;
-        margin-bottom: 1.5rem;
+      .auth-sub {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 17px;
+        font-weight: 400;
+        letter-spacing: -0.374px;
+        margin-bottom: 2rem;
       }
       #auth-form {
         display: flex;
-        gap: 0.5rem;
+        flex-direction: column;
+        gap: 0.75rem;
       }
       #auth-input {
-        flex: 1;
-        padding: 0.65rem 1rem;
-        border-radius: 8px;
-        border: 1px solid var(--border);
-        background: var(--bg-card);
+        padding: 12px 16px;
+        border-radius: 12px;
+        border: none;
+        background: rgba(255, 255, 255, 0.1);
         color: var(--white);
-        font-size: 0.95rem;
+        font-size: 17px;
+        font-family: inherit;
+        letter-spacing: -0.374px;
         outline: none;
-        transition: border-color 0.2s;
+        transition: background 0.2s;
+        text-align: center;
       }
       #auth-input:focus {
-        border-color: var(--accent);
+        background: rgba(255, 255, 255, 0.15);
+        outline: 2px solid var(--blue);
+        outline-offset: 2px;
+      }
+      #auth-input::placeholder {
+        color: rgba(255, 255, 255, 0.35);
       }
       #auth-form button {
-        padding: 0.65rem 1.2rem;
-        border-radius: 8px;
+        padding: 12px 24px;
+        border-radius: 980px;
         border: none;
-        background: var(--accent);
+        background: var(--blue);
         color: var(--white);
-        font-size: 0.95rem;
-        font-weight: 500;
+        font-size: 17px;
+        font-weight: 400;
+        font-family: inherit;
+        letter-spacing: -0.374px;
         cursor: pointer;
-        transition: background 0.2s;
+        transition: opacity 0.2s;
       }
-      #auth-form button:hover {
-        background: var(--accent-hover);
-      }
+      #auth-form button:hover { opacity: 0.85; }
       .auth-error {
-        color: #FF453A;
-        font-size: 0.85rem;
+        color: #ff453a;
+        font-size: 14px;
         margin-top: 0.75rem;
         min-height: 1.2em;
+        letter-spacing: -0.224px;
       }
     </style>
 
     <script is:inline>
-      // SHA-256 hash of the password — password itself never appears in source
-      // To change the password, update this hash value
       const PASS_HASH = 'fb18c395142dabb9f4c9c33ff9a82ac66baf7618b7572806f19e50c1cf9b1b04';
-
       async function sha256(message) {
         const msgBuffer = new TextEncoder().encode(message);
         const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
         const hashArray = Array.from(new Uint8Array(hashBuffer));
         return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
       }
-
       function unlock() {
         document.getElementById('auth-gate').style.display = 'none';
         document.getElementById('main-content').style.display = '';
       }
-
-      // Check if already authenticated
-      if (sessionStorage.getItem('sdm-auth') === 'true') {
-        unlock();
-      }
-
+      if (sessionStorage.getItem('sdm-auth') === 'true') { unlock(); }
       document.getElementById('auth-form').addEventListener('submit', async function(e) {
         e.preventDefault();
         const input = document.getElementById('auth-input').value;
@@ -155,7 +156,7 @@ const { title } = Astro.props;
           sessionStorage.setItem('sdm-auth', 'true');
           unlock();
         } else {
-          document.getElementById('auth-error').textContent = 'パスワードが正しくありません';
+          document.getElementById('auth-error').textContent = 'Incorrect password';
           document.getElementById('auth-input').value = '';
           document.getElementById('auth-input').focus();
         }

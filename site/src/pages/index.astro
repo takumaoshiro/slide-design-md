@@ -6,54 +6,61 @@ const categories = [...new Set(designs.map(d => d.category))];
 ---
 
 <Layout title="slide-design-md — Slide Design Systems for AI Agents">
-  <header>
-    <div class="container">
-      <div class="hero">
-        <div class="badge">
-          <span class="badge-icon">▦</span>
-          <span>{designs.length} DESIGN.md files</span>
-        </div>
-        <h1>slide-design-md</h1>
-        <p class="subtitle">
-          Slide design system inspirations for AI agents.<br />
-          Drop a <code>DESIGN.md</code> into your project — let AI generate on-brand presentations.
-        </p>
-        <div class="hero-actions">
-          <a href="https://github.com/takumaoshiro/slide-design-md" class="btn btn-primary" target="_blank">
-            GitHub →
-          </a>
-          <a href="#browse" class="btn btn-secondary">Browse designs</a>
-        </div>
+  <!-- Nav -->
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-logo">slide-design-md</span>
+      <div class="nav-links">
+        <a href="#browse">Browse</a>
+        <a href="https://github.com/takumaoshiro/slide-design-md" target="_blank">GitHub</a>
       </div>
     </div>
-  </header>
+  </nav>
 
-  <section class="how-it-works">
+  <!-- Hero: Dark section -->
+  <section class="hero">
     <div class="container">
-      <h2>How it works</h2>
+      <p class="hero-eyebrow">{designs.length} design systems</p>
+      <h1 class="hero-title">Slide design systems<br />for AI agents.</h1>
+      <p class="hero-sub">
+        Drop a <code>DESIGN.md</code> into your project.<br />
+        AI generates on-brand presentations automatically.
+      </p>
+      <div class="hero-cta">
+        <a href="#browse" class="btn-pill-outline">Browse designs</a>
+        <a href="https://github.com/takumaoshiro/slide-design-md/blob/main/designs/_template/DESIGN.md" class="btn-pill-blue" target="_blank">Get started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works: Light section -->
+  <section class="how-section">
+    <div class="container">
+      <h2 class="section-heading">How it works.</h2>
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
           <h3>Browse</h3>
-          <p>Find a slide design system that matches your needs</p>
+          <p>Find a slide design system that fits your presentation needs.</p>
         </div>
         <div class="step">
           <div class="step-num">2</div>
           <h3>Copy</h3>
-          <p>Add the <code>DESIGN.md</code> to your project</p>
+          <p>Add the <code>DESIGN.md</code> file to your project repository.</p>
         </div>
         <div class="step">
           <div class="step-num">3</div>
           <h3>Generate</h3>
-          <p>AI agents read the spec and produce consistent slides</p>
+          <p>AI agents read the spec and produce visually consistent slides.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Catalog: Dark section -->
   <section id="browse" class="catalog">
     <div class="container">
-      <h2>Design Systems</h2>
+      <h2 class="section-heading-light">Design Systems</h2>
       <div class="filters">
         <button class="filter active" data-category="all">All</button>
         {categories.map(cat => (
@@ -64,22 +71,47 @@ const categories = [...new Set(designs.map(d => d.category))];
         {designs.map(design => (
           <a href={`https://github.com/takumaoshiro/slide-design-md/blob/main/designs/${design.id}/DESIGN.md`}
              class="card" data-category={design.category} target="_blank">
-            <div class="card-preview">
-              <div class="color-strip">
-                {design.colors.map(color => (
-                  <div class="color-dot" style={`background:${color};`} title={color}></div>
-                ))}
+            <!-- Slide Preview -->
+            <div class="preview" style={`background: ${design.preview.bg};`}>
+              <!-- Mini slide mockup -->
+              <div class="slide-mock" style={`background: ${design.preview.bg}; border-color: ${design.preview.bg === '#FFFFFF' || design.preview.bg === '#F8F9FC' ? '#e0e0e0' : 'transparent'};`}>
+                <!-- Top accent line -->
+                <div class="mock-accent" style={`background: ${design.preview.accent};`}></div>
+                <!-- Title bar -->
+                <div class="mock-title" style={`background: ${design.preview.text}; opacity: 0.85;`}></div>
+                <div class="mock-subtitle" style={`background: ${design.preview.muted}; opacity: 0.5;`}></div>
+                <!-- Content area -->
+                <div class="mock-content">
+                  <div class="mock-cards">
+                    {design.preview.semantic.map((color: string) => (
+                      <div class="mock-card" style={`background: ${design.preview.cardBg}; border-left: 2px solid ${color};`}>
+                        <div class="mock-line" style={`background: ${design.preview.text}; opacity: 0.3;`}></div>
+                        <div class="mock-line short" style={`background: ${design.preview.muted}; opacity: 0.25;`}></div>
+                      </div>
+                    ))}
+                  </div>
+                  <!-- Table mockup -->
+                  <div class="mock-table">
+                    <div class="mock-table-header" style={`background: ${design.preview.accent};`}></div>
+                    <div class="mock-table-row" style={`border-color: ${design.preview.muted}30;`}></div>
+                    <div class="mock-table-row" style={`border-color: ${design.preview.muted}30;`}></div>
+                    <div class="mock-table-row" style={`border-color: ${design.preview.muted}30;`}></div>
+                  </div>
+                </div>
+                <!-- Footer -->
+                <div class="mock-footer" style={`background: ${design.preview.muted}; opacity: 0.3;`}></div>
               </div>
             </div>
-            <div class="card-body">
-              <div class="card-header">
-                <h3>{design.name}</h3>
-                <span class="card-badge">{design.aspectRatio}</span>
-              </div>
+            <!-- Card info -->
+            <div class="card-info">
+              <h3>{design.name}</h3>
               <p class="card-desc">{design.description}</p>
               <div class="card-meta">
                 <span class="card-style">{design.style}</span>
-                <span class="card-fonts">{design.fonts[0]}</span>
+                <span class="card-ratio">{design.aspectRatio}</span>
+                <span class="card-arrow">
+                  Learn more &rsaquo;
+                </span>
               </div>
             </div>
           </a>
@@ -88,109 +120,165 @@ const categories = [...new Set(designs.map(d => d.category))];
     </div>
   </section>
 
-  <section class="cta">
+  <!-- CTA: Light section -->
+  <section class="cta-section">
     <div class="container">
-      <h2>Add your design system</h2>
-      <p>Copy the template, fill in your specs, and submit a PR.</p>
-      <a href="https://github.com/takumaoshiro/slide-design-md/blob/main/designs/_template/DESIGN.md"
-         class="btn btn-primary" target="_blank">
-        View template →
-      </a>
+      <h2 class="section-heading">Add your design system.</h2>
+      <p class="cta-body">Copy the template. Define your visual identity. Submit a PR.</p>
+      <div class="cta-links">
+        <a href="https://github.com/takumaoshiro/slide-design-md/blob/main/designs/_template/DESIGN.md" class="btn-pill-outline-dark" target="_blank">
+          View template &rsaquo;
+        </a>
+        <a href="https://github.com/takumaoshiro/slide-design-md" class="link-blue" target="_blank">
+          GitHub repository &rsaquo;
+        </a>
+      </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <div class="container">
-      <p>slide-design-md — Built for AI agents that create presentations.</p>
+      <p>slide-design-md &mdash; Built for AI agents that create presentations.</p>
     </div>
   </footer>
 </Layout>
 
 <style>
-  .container {
-    max-width: 1100px;
+  /* ── Nav (Apple glass) ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    height: 48px;
+  }
+  .nav-inner {
+    max-width: 980px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo {
+    font-size: 14px;
+    font-weight: 600;
+    color: #f5f5f7;
+    letter-spacing: -0.224px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  .nav-links a {
+    font-size: 12px;
+    color: #f5f5f7;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+    letter-spacing: 0;
+  }
+  .nav-links a:hover { opacity: 1; }
+
+  /* ── Container ── */
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
   }
 
-  /* Hero */
-  header {
-    padding: 6rem 0 4rem;
+  /* ── Hero (Dark) ── */
+  .hero {
+    background: var(--black);
+    padding: 8rem 0 6rem;
     text-align: center;
-    border-bottom: 1px solid var(--border);
   }
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.35rem 1rem;
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-  }
-  .badge-icon { font-size: 1rem; }
-  h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: var(--white);
-    letter-spacing: -0.03em;
+  .hero-eyebrow {
+    font-size: 14px;
+    color: var(--blue-bright, #2997ff);
+    letter-spacing: -0.224px;
     margin-bottom: 1rem;
+    font-weight: 400;
   }
-  .subtitle {
-    font-size: 1.15rem;
-    color: var(--text-muted);
-    max-width: 550px;
-    margin: 0 auto 2rem;
-    line-height: 1.7;
+  .hero-title {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    font-size: 56px;
+    font-weight: 600;
+    line-height: 1.07;
+    letter-spacing: -0.5px;
+    color: var(--white);
+    margin-bottom: 1.25rem;
   }
-  .subtitle code {
-    background: var(--bg-card);
-    padding: 0.15rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.95rem;
-    color: var(--accent);
-    border: 1px solid var(--border);
+  .hero-sub {
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.38;
+    letter-spacing: 0.1px;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 2.5rem;
   }
-  .hero-actions {
+  .hero-sub code {
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 19px;
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.08);
+    padding: 2px 10px;
+    border-radius: 5px;
+  }
+  .hero-cta {
     display: flex;
     gap: 1rem;
     justify-content: center;
+    align-items: center;
   }
-  .btn {
+  .btn-pill-outline {
     display: inline-flex;
     align-items: center;
-    padding: 0.65rem 1.5rem;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    font-weight: 500;
+    padding: 8px 22px;
+    border-radius: 980px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: var(--white);
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -0.374px;
     transition: all 0.2s;
   }
-  .btn-primary {
-    background: var(--accent);
+  .btn-pill-outline:hover {
+    border-color: var(--white);
+    background: rgba(255, 255, 255, 0.08);
+  }
+  .btn-pill-blue {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 22px;
+    border-radius: 980px;
+    border: none;
+    background: var(--blue);
     color: var(--white);
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -0.374px;
+    transition: opacity 0.2s;
   }
-  .btn-primary:hover { background: var(--accent-hover); }
-  .btn-secondary {
-    border: 1px solid var(--border);
-    color: var(--text);
-  }
-  .btn-secondary:hover {
-    border-color: var(--text-muted);
-    color: var(--white);
-  }
+  .btn-pill-blue:hover { opacity: 0.85; }
 
-  /* How it works */
-  .how-it-works {
-    padding: 4rem 0;
-    border-bottom: 1px solid var(--border);
+  /* ── How Section (Light) ── */
+  .how-section {
+    background: var(--light-bg);
+    padding: 5rem 0;
   }
-  .how-it-works h2 {
+  .section-heading {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    color: var(--near-black);
     text-align: center;
-    font-size: 1.5rem;
-    color: var(--white);
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
   }
   .steps {
     display: grid;
@@ -199,171 +287,305 @@ const categories = [...new Set(designs.map(d => d.category))];
   }
   .step {
     text-align: center;
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;
   }
   .step-num {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    color: var(--accent);
+    background: var(--near-black);
+    color: var(--white);
+    font-size: 17px;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
   }
   .step h3 {
-    color: var(--white);
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--near-black);
+    letter-spacing: 0.1px;
     margin-bottom: 0.5rem;
   }
   .step p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: 14px;
+    color: var(--text-80);
+    letter-spacing: -0.224px;
+    line-height: 1.43;
   }
   .step code {
-    background: var(--bg-card);
-    padding: 0.1rem 0.4rem;
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 13px;
+    background: rgba(0, 0, 0, 0.06);
+    padding: 1px 6px;
     border-radius: 4px;
-    font-size: 0.85rem;
-    color: var(--accent);
   }
 
-  /* Catalog */
+  /* ── Catalog (Dark) ── */
   .catalog {
-    padding: 4rem 0;
+    background: var(--black);
+    padding: 5rem 0 6rem;
   }
-  .catalog h2 {
-    font-size: 1.5rem;
+  .section-heading-light {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
     color: var(--white);
-    margin-bottom: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
   }
   .filters {
     display: flex;
     gap: 0.5rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 3rem;
   }
   .filter {
-    padding: 0.4rem 1rem;
-    border-radius: 100px;
-    border: 1px solid var(--border);
+    padding: 6px 16px;
+    border-radius: 980px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     background: transparent;
-    color: var(--text-muted);
-    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 14px;
+    font-family: inherit;
+    letter-spacing: -0.224px;
     cursor: pointer;
     transition: all 0.2s;
   }
   .filter:hover {
-    border-color: var(--text-muted);
-    color: var(--text);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.8);
   }
   .filter.active {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: var(--white);
+    background: var(--white);
+    border-color: var(--white);
+    color: var(--near-black);
   }
 
-  /* Cards grid */
+  /* ── Cards Grid ── */
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
   }
   .card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
+    background: #1d1d1f;
     border-radius: 12px;
     overflow: hidden;
-    transition: all 0.2s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
   }
   .card:hover {
-    background: var(--bg-card-hover);
-    border-color: var(--text-dim);
-    transform: translateY(-2px);
+    transform: scale(1.02);
+    box-shadow: rgba(0, 0, 0, 0.22) 3px 5px 30px 0px;
   }
-  .card-preview {
+
+  /* ── Slide Preview ── */
+  .preview {
     padding: 1.5rem 1.5rem 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 80px;
   }
-  .color-strip {
+  .slide-mock {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid transparent;
+    padding: 8%;
     display: flex;
-    gap: 0.75rem;
+    flex-direction: column;
   }
-  .color-dot {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 2px solid var(--border);
+  .mock-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
   }
-  .card-body {
-    padding: 0 1.5rem 1.5rem;
+  .mock-title {
+    width: 45%;
+    height: 6px;
+    border-radius: 2px;
+    margin-bottom: 4px;
   }
-  .card-header {
+  .mock-subtitle {
+    width: 28%;
+    height: 4px;
+    border-radius: 2px;
+    margin-bottom: 8px;
+  }
+  .mock-content {
+    flex: 1;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
+    flex-direction: column;
+    gap: 6px;
   }
-  .card-header h3 {
-    font-size: 1.1rem;
+  .mock-cards {
+    display: flex;
+    gap: 4px;
+  }
+  .mock-card {
+    flex: 1;
+    border-radius: 2px;
+    padding: 5px 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .mock-line {
+    width: 70%;
+    height: 3px;
+    border-radius: 1px;
+  }
+  .mock-line.short {
+    width: 45%;
+    height: 2px;
+  }
+  .mock-table {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+  .mock-table-header {
+    height: 5px;
+    border-radius: 1px;
+    opacity: 0.9;
+  }
+  .mock-table-row {
+    height: 4px;
+    border-bottom: 1px solid;
+    opacity: 0.6;
+  }
+  .mock-footer {
+    position: absolute;
+    bottom: 6%;
+    right: 8%;
+    width: 18%;
+    height: 3px;
+    border-radius: 1px;
+  }
+
+  /* ── Card Info ── */
+  .card-info {
+    padding: 1rem 1.5rem 1.25rem;
+  }
+  .card-info h3 {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    font-size: 21px;
+    font-weight: 600;
     color: var(--white);
-  }
-  .card-badge {
-    font-size: 0.75rem;
-    padding: 0.2rem 0.6rem;
-    border-radius: 4px;
-    background: var(--bg);
-    color: var(--text-muted);
-    border: 1px solid var(--border);
+    letter-spacing: 0.1px;
+    line-height: 1.19;
+    margin-bottom: 0.35rem;
   }
   .card-desc {
-    font-size: 0.875rem;
-    color: var(--text-muted);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.55);
+    letter-spacing: -0.224px;
+    line-height: 1.43;
     margin-bottom: 0.75rem;
-    line-height: 1.5;
   }
   .card-meta {
     display: flex;
-    gap: 1rem;
-    font-size: 0.8rem;
-    color: var(--text-dim);
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 12px;
+    letter-spacing: -0.12px;
+  }
+  .card-style {
+    color: rgba(255, 255, 255, 0.35);
+  }
+  .card-ratio {
+    color: rgba(255, 255, 255, 0.35);
+    padding: 2px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+  }
+  .card-arrow {
+    margin-left: auto;
+    color: #2997ff;
+    font-size: 14px;
+    letter-spacing: -0.224px;
   }
 
-  /* CTA */
-  .cta {
-    padding: 4rem 0;
+  /* ── CTA Section (Light) ── */
+  .cta-section {
+    background: var(--light-bg);
+    padding: 5rem 0;
     text-align: center;
-    border-top: 1px solid var(--border);
   }
-  .cta h2 {
-    font-size: 1.5rem;
+  .cta-body {
+    font-size: 21px;
+    font-weight: 400;
+    color: var(--text-80);
+    letter-spacing: 0.1px;
+    margin-bottom: 2rem;
+  }
+  .cta-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn-pill-outline-dark {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 22px;
+    border-radius: 980px;
+    border: 1px solid var(--near-black);
+    color: var(--near-black);
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -0.374px;
+    transition: all 0.2s;
+  }
+  .btn-pill-outline-dark:hover {
+    background: var(--near-black);
     color: var(--white);
-    margin-bottom: 0.75rem;
   }
-  .cta p {
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
+  .link-blue {
+    color: var(--blue-link);
+    font-size: 17px;
+    letter-spacing: -0.374px;
+    transition: opacity 0.2s;
   }
+  .link-blue:hover { text-decoration: underline; }
 
-  /* Footer */
+  /* ── Footer ── */
   footer {
+    background: var(--light-bg);
     padding: 2rem 0;
     text-align: center;
-    border-top: 1px solid var(--border);
-    color: var(--text-dim);
-    font-size: 0.85rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+  }
+  footer p {
+    font-size: 12px;
+    color: var(--text-48);
+    letter-spacing: -0.12px;
   }
 
-  /* Responsive */
-  @media (max-width: 768px) {
-    h1 { font-size: 2.5rem; }
-    .steps { grid-template-columns: 1fr; }
+  /* ── Responsive ── */
+  @media (max-width: 834px) {
+    .hero-title { font-size: 40px; }
+    .hero-sub { font-size: 17px; }
+    .section-heading, .section-heading-light { font-size: 32px; }
+    .steps { grid-template-columns: 1fr; gap: 0; }
     .grid { grid-template-columns: 1fr; }
+    .hero-cta { flex-direction: column; }
+    .cta-links { flex-direction: column; }
+  }
+  @media (max-width: 480px) {
+    .hero-title { font-size: 32px; }
+    .hero { padding: 5rem 0 4rem; }
+    .nav-links { gap: 1rem; }
   }
 </style>
 
@@ -372,9 +594,9 @@ const categories = [...new Set(designs.map(d => d.category))];
     btn.addEventListener('click', () => {
       document.querySelectorAll('.filter').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const cat = btn.dataset.category;
+      const cat = (btn as HTMLElement).dataset.category;
       document.querySelectorAll('.card').forEach(card => {
-        if (cat === 'all' || card.dataset.category === cat) {
+        if (cat === 'all' || (card as HTMLElement).dataset.category === cat) {
           (card as HTMLElement).style.display = '';
         } else {
           (card as HTMLElement).style.display = 'none';
