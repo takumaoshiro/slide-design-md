@@ -230,8 +230,15 @@ const mdHtml = await marked(mdRaw);
       <!-- DESIGN.md tab -->
       <div id="tab-designmd" class="tab-content">
         <div class="md-frame">
+          <div class="md-toolbar">
+            <button class="copy-md-btn" id="copy-md">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.5"/></svg>
+              <span>Copy DESIGN.md</span>
+            </button>
+          </div>
           <div class="md-body" set:html={mdHtml} />
         </div>
+        <textarea id="md-raw" style="display:none;">{mdRaw}</textarea>
       </div>
 
     </div>
@@ -330,7 +337,11 @@ const mdHtml = await marked(mdRaw);
   .sp-type-meta { font-size: clamp(4px, 0.6vw, 7px); color: #9393A8; flex-shrink: 0; margin-left: 4%; }
 
   /* DESIGN.md frame */
-  .md-frame { border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; overflow: hidden; background: #fff; padding: 2rem 2.5rem; }
+  .md-frame { border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; overflow: hidden; background: #fff; padding: 0 2.5rem 2rem; }
+  .md-toolbar { display: flex; justify-content: flex-end; padding: 1rem 0; position: sticky; top: 48px; background: #fff; z-index: 10; border-bottom: 1px solid #e5e7f0; }
+  .copy-md-btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 6px; border: 1px solid rgba(0,0,0,0.15); background: #fff; color: var(--near-black); font-size: 13px; font-family: inherit; letter-spacing: -0.12px; cursor: pointer; transition: all 0.2s; }
+  .copy-md-btn:hover { background: var(--light-bg); border-color: rgba(0,0,0,0.3); }
+  .copy-md-btn.copied { background: #e8f5e9; border-color: #2e7d32; color: #2e7d32; }
   .md-body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif; font-size: 15px; color: #1d1d1f; line-height: 1.6; }
   .md-body h1 { font-size: 28px; font-weight: 600; margin: 2rem 0 1rem; border-bottom: 1px solid #e5e7f0; padding-bottom: 0.5rem; }
   .md-body h2 { font-size: 22px; font-weight: 600; margin: 2rem 0 0.75rem; }
@@ -367,7 +378,7 @@ const mdHtml = await marked(mdRaw);
       document.getElementById('tab-' + target)?.classList.add('active');
     });
   });
-  // Copy button
+  // Copy command button
   document.querySelectorAll('.copy-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const text = (btn as HTMLElement).dataset.copy || '';
@@ -377,5 +388,17 @@ const mdHtml = await marked(mdRaw);
         btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.5"/></svg>';
       }, 1500);
     });
+  });
+  // Copy DESIGN.md
+  document.getElementById('copy-md')?.addEventListener('click', () => {
+    const raw = (document.getElementById('md-raw') as HTMLTextAreaElement)?.value || '';
+    navigator.clipboard.writeText(raw);
+    const btn = document.getElementById('copy-md')!;
+    btn.classList.add('copied');
+    btn.querySelector('span')!.textContent = 'Copied!';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.querySelector('span')!.textContent = 'Copy DESIGN.md';
+    }, 2000);
   });
 </script>
