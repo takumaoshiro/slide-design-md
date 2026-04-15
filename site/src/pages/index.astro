@@ -68,54 +68,96 @@ const categories = [...new Set(designs.map(d => d.category))];
         ))}
       </div>
       <div class="grid">
-        {designs.map(design => (
-          <a href={`https://github.com/takumaoshiro/slide-design-md/blob/main/designs/${design.id}/DESIGN.md`}
-             class="card" data-category={design.category} target="_blank">
-            <!-- Slide Preview -->
-            <div class="preview" style={`background: ${design.preview.bg};`}>
-              <!-- Mini slide mockup -->
-              <div class="slide-mock" style={`background: ${design.preview.bg}; border-color: ${design.preview.bg === '#FFFFFF' || design.preview.bg === '#F8F9FC' ? '#e0e0e0' : 'transparent'};`}>
-                <!-- Top accent line -->
-                <div class="mock-accent" style={`background: ${design.preview.accent};`}></div>
-                <!-- Title bar -->
-                <div class="mock-title" style={`background: ${design.preview.text}; opacity: 0.85;`}></div>
-                <div class="mock-subtitle" style={`background: ${design.preview.muted}; opacity: 0.5;`}></div>
-                <!-- Content area -->
-                <div class="mock-content">
-                  <div class="mock-cards">
-                    {design.preview.semantic.map((color: string) => (
-                      <div class="mock-card" style={`background: ${design.preview.cardBg}; border-left: 2px solid ${color};`}>
-                        <div class="mock-line" style={`background: ${design.preview.text}; opacity: 0.3;`}></div>
-                        <div class="mock-line short" style={`background: ${design.preview.muted}; opacity: 0.25;`}></div>
-                      </div>
-                    ))}
+
+        {/* ── CA ADVANCE ── */}
+        <a href="https://github.com/takumaoshiro/slide-design-md/blob/main/designs/ca-advance/DESIGN.md"
+           class="card" data-category="Corporate" target="_blank">
+          <div class="preview">
+            <div class="slide ca-advance-slide">
+              <div class="ca-topline"></div>
+              <div class="ca-cover-body">
+                <div class="ca-logo">CA ADVANCE</div>
+                <div class="ca-title">Monthly Performance Report</div>
+                <div class="ca-divider"></div>
+                <div class="ca-date">2025.04 — Executive Summary</div>
+              </div>
+            </div>
+          </div>
+          <div class="card-info">
+            <h3>CA ADVANCE</h3>
+            <p class="card-desc">White-base, professional, information-dense corporate reporting.</p>
+            <div class="card-meta">
+              <span class="card-style">Minimal BtoB</span>
+              <span class="card-ratio">16:9</span>
+              <span class="card-arrow">Learn more &rsaquo;</span>
+            </div>
+          </div>
+        </a>
+
+        {/* ── Tech Keynote ── */}
+        <a href="https://github.com/takumaoshiro/slide-design-md/blob/main/designs/tech-keynote/DESIGN.md"
+           class="card" data-category="Tech" target="_blank">
+          <div class="preview">
+            <div class="slide tk-slide">
+              <div class="tk-center">
+                <div class="tk-hero-text">Introducing</div>
+                <div class="tk-product">Product X</div>
+                <div class="tk-sub">The most advanced platform we've ever created.</div>
+                <div class="tk-ctas">
+                  <span class="tk-btn-outline">Learn more</span>
+                  <span class="tk-btn-blue">Get started</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-info">
+            <h3>Tech Keynote</h3>
+            <p class="card-desc">Dark, bold, Apple-inspired. High-impact keynote for launches and tech talks.</p>
+            <div class="card-meta">
+              <span class="card-style">Dark Keynote</span>
+              <span class="card-ratio">16:9</span>
+              <span class="card-arrow">Learn more &rsaquo;</span>
+            </div>
+          </div>
+        </a>
+
+        {/* ── Startup Pitch ── */}
+        <a href="https://github.com/takumaoshiro/slide-design-md/blob/main/designs/startup-pitch/DESIGN.md"
+           class="card" data-category="Startup" target="_blank">
+          <div class="preview">
+            <div class="slide sp-slide">
+              <div class="sp-content">
+                <div class="sp-badge">Series A</div>
+                <div class="sp-title">Company Name</div>
+                <div class="sp-tagline">The future of enterprise collaboration.</div>
+                <div class="sp-metrics">
+                  <div class="sp-metric">
+                    <span class="sp-num">$4.2M</span>
+                    <span class="sp-label">ARR</span>
                   </div>
-                  <!-- Table mockup -->
-                  <div class="mock-table">
-                    <div class="mock-table-header" style={`background: ${design.preview.accent};`}></div>
-                    <div class="mock-table-row" style={`border-color: ${design.preview.muted}30;`}></div>
-                    <div class="mock-table-row" style={`border-color: ${design.preview.muted}30;`}></div>
-                    <div class="mock-table-row" style={`border-color: ${design.preview.muted}30;`}></div>
+                  <div class="sp-metric">
+                    <span class="sp-num">312%</span>
+                    <span class="sp-label">YoY Growth</span>
+                  </div>
+                  <div class="sp-metric">
+                    <span class="sp-num">1,200</span>
+                    <span class="sp-label">Customers</span>
                   </div>
                 </div>
-                <!-- Footer -->
-                <div class="mock-footer" style={`background: ${design.preview.muted}; opacity: 0.3;`}></div>
               </div>
             </div>
-            <!-- Card info -->
-            <div class="card-info">
-              <h3>{design.name}</h3>
-              <p class="card-desc">{design.description}</p>
-              <div class="card-meta">
-                <span class="card-style">{design.style}</span>
-                <span class="card-ratio">{design.aspectRatio}</span>
-                <span class="card-arrow">
-                  Learn more &rsaquo;
-                </span>
-              </div>
+          </div>
+          <div class="card-info">
+            <h3>Startup Pitch</h3>
+            <p class="card-desc">Modern gradient, investor-facing. Clean pitch decks for fundraising.</p>
+            <div class="card-meta">
+              <span class="card-style">Modern Pitch</span>
+              <span class="card-ratio">16:9</span>
+              <span class="card-arrow">Learn more &rsaquo;</span>
             </div>
-          </a>
-        ))}
+          </div>
+        </a>
+
       </div>
     </div>
   </section>
@@ -136,7 +178,6 @@ const categories = [...new Set(designs.map(d => d.category))];
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <p>slide-design-md &mdash; Built for AI agents that create presentations.</p>
@@ -170,16 +211,12 @@ const categories = [...new Set(designs.map(d => d.category))];
     color: #f5f5f7;
     letter-spacing: -0.224px;
   }
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-  }
+  .nav-links { display: flex; gap: 2rem; }
   .nav-links a {
     font-size: 12px;
     color: #f5f5f7;
     opacity: 0.8;
     transition: opacity 0.2s;
-    letter-spacing: 0;
   }
   .nav-links a:hover { opacity: 1; }
 
@@ -198,10 +235,9 @@ const categories = [...new Set(designs.map(d => d.category))];
   }
   .hero-eyebrow {
     font-size: 14px;
-    color: var(--blue-bright, #2997ff);
+    color: #2997ff;
     letter-spacing: -0.224px;
     margin-bottom: 1rem;
-    font-weight: 400;
   }
   .hero-title {
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
@@ -214,14 +250,12 @@ const categories = [...new Set(designs.map(d => d.category))];
   }
   .hero-sub {
     font-size: 21px;
-    font-weight: 400;
     line-height: 1.38;
-    letter-spacing: 0.1px;
     color: rgba(255, 255, 255, 0.55);
     margin-bottom: 2.5rem;
   }
   .hero-sub code {
-    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-family: 'SF Mono', 'Consolas', monospace;
     font-size: 19px;
     color: var(--white);
     background: rgba(255, 255, 255, 0.08);
@@ -232,17 +266,13 @@ const categories = [...new Set(designs.map(d => d.category))];
     display: flex;
     gap: 1rem;
     justify-content: center;
-    align-items: center;
   }
   .btn-pill-outline {
-    display: inline-flex;
-    align-items: center;
     padding: 8px 22px;
     border-radius: 980px;
     border: 1px solid rgba(255, 255, 255, 0.35);
     color: var(--white);
     font-size: 17px;
-    font-weight: 400;
     letter-spacing: -0.374px;
     transition: all 0.2s;
   }
@@ -251,15 +281,11 @@ const categories = [...new Set(designs.map(d => d.category))];
     background: rgba(255, 255, 255, 0.08);
   }
   .btn-pill-blue {
-    display: inline-flex;
-    align-items: center;
     padding: 8px 22px;
     border-radius: 980px;
-    border: none;
     background: var(--blue);
     color: var(--white);
     font-size: 17px;
-    font-weight: 400;
     letter-spacing: -0.374px;
     transition: opacity 0.2s;
   }
@@ -285,10 +311,7 @@ const categories = [...new Set(designs.map(d => d.category))];
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
-  .step {
-    text-align: center;
-    padding: 2rem 1.5rem;
-  }
+  .step { text-align: center; padding: 2rem 1.5rem; }
   .step-num {
     display: inline-flex;
     align-items: center;
@@ -306,7 +329,6 @@ const categories = [...new Set(designs.map(d => d.category))];
     font-size: 21px;
     font-weight: 600;
     color: var(--near-black);
-    letter-spacing: 0.1px;
     margin-bottom: 0.5rem;
   }
   .step p {
@@ -316,7 +338,7 @@ const categories = [...new Set(designs.map(d => d.category))];
     line-height: 1.43;
   }
   .step code {
-    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-family: 'SF Mono', 'Consolas', monospace;
     font-size: 13px;
     background: rgba(0, 0, 0, 0.06);
     padding: 1px 6px;
@@ -377,100 +399,179 @@ const categories = [...new Set(designs.map(d => d.category))];
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
   }
   .card:hover {
     transform: scale(1.02);
     box-shadow: rgba(0, 0, 0, 0.22) 3px 5px 30px 0px;
   }
 
-  /* ── Slide Preview ── */
+  /* ── Slide Preview (shared) ── */
   .preview {
-    padding: 1.5rem 1.5rem 1rem;
+    padding: 1.25rem 1.25rem 0.5rem;
+  }
+  .slide {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  /* ── CA ADVANCE slide ── */
+  .ca-advance-slide {
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+  }
+  .ca-topline {
+    height: 2px;
+    background: #1B4F8A;
+  }
+  .ca-cover-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8%;
+    gap: 4%;
+  }
+  .ca-logo {
+    font-size: clamp(6px, 1.4vw, 11px);
+    font-weight: 700;
+    color: #1B4F8A;
+    letter-spacing: 0.5px;
+  }
+  .ca-title {
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: clamp(10px, 2.8vw, 22px);
+    font-weight: 900;
+    color: #1A1A1A;
+    text-align: center;
+    line-height: 1.2;
+  }
+  .ca-divider {
+    width: 15%;
+    height: 2px;
+    background: #1B4F8A;
+  }
+  .ca-date {
+    font-size: clamp(5px, 1.1vw, 9px);
+    color: #999999;
+    letter-spacing: 0.3px;
+  }
+
+  /* ── Tech Keynote slide ── */
+  .tk-slide {
+    background: #0A0A0A;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .slide-mock {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 6px;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid transparent;
+  .tk-center {
+    text-align: center;
     padding: 8%;
+  }
+  .tk-hero-text {
+    font-size: clamp(5px, 1.1vw, 9px);
+    color: #888888;
+    letter-spacing: 0.3px;
+    margin-bottom: 4%;
+  }
+  .tk-product {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    font-size: clamp(14px, 3.5vw, 28px);
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.07;
+    letter-spacing: -0.5px;
+    margin-bottom: 4%;
+  }
+  .tk-sub {
+    font-size: clamp(5px, 1.2vw, 10px);
+    color: #888888;
+    margin-bottom: 8%;
+    line-height: 1.3;
+  }
+  .tk-ctas {
+    display: flex;
+    gap: 6%;
+    justify-content: center;
+  }
+  .tk-btn-outline {
+    font-size: clamp(4px, 0.9vw, 8px);
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 980px;
+    padding: 2px 10px;
+  }
+  .tk-btn-blue {
+    font-size: clamp(4px, 0.9vw, 8px);
+    color: #FFFFFF;
+    background: #0A84FF;
+    border-radius: 980px;
+    padding: 2px 10px;
+  }
+
+  /* ── Startup Pitch slide ── */
+  .sp-slide {
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sp-content {
+    text-align: center;
+    padding: 8%;
+  }
+  .sp-badge {
+    display: inline-block;
+    font-size: clamp(4px, 0.8vw, 7px);
+    color: #6366F1;
+    background: #EEF2FF;
+    padding: 1px 8px;
+    border-radius: 980px;
+    margin-bottom: 5%;
+    font-weight: 500;
+  }
+  .sp-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(12px, 3vw, 24px);
+    font-weight: 700;
+    color: #1A1A2E;
+    line-height: 1.1;
+    margin-bottom: 3%;
+  }
+  .sp-tagline {
+    font-size: clamp(5px, 1.1vw, 9px);
+    color: #9393A8;
+    margin-bottom: 8%;
+  }
+  .sp-metrics {
+    display: flex;
+    gap: 6%;
+    justify-content: center;
+  }
+  .sp-metric {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    background: #F8F9FC;
+    border: 1px solid #E5E7F0;
+    border-radius: 6px;
+    padding: 4% 5%;
   }
-  .mock-accent {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
+  .sp-num {
+    font-size: clamp(8px, 1.8vw, 15px);
+    font-weight: 700;
+    color: #6366F1;
+    line-height: 1.2;
   }
-  .mock-title {
-    width: 45%;
-    height: 6px;
-    border-radius: 2px;
-    margin-bottom: 4px;
-  }
-  .mock-subtitle {
-    width: 28%;
-    height: 4px;
-    border-radius: 2px;
-    margin-bottom: 8px;
-  }
-  .mock-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .mock-cards {
-    display: flex;
-    gap: 4px;
-  }
-  .mock-card {
-    flex: 1;
-    border-radius: 2px;
-    padding: 5px 4px;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-  .mock-line {
-    width: 70%;
-    height: 3px;
-    border-radius: 1px;
-  }
-  .mock-line.short {
-    width: 45%;
-    height: 2px;
-  }
-  .mock-table {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-  }
-  .mock-table-header {
-    height: 5px;
-    border-radius: 1px;
-    opacity: 0.9;
-  }
-  .mock-table-row {
-    height: 4px;
-    border-bottom: 1px solid;
-    opacity: 0.6;
-  }
-  .mock-footer {
-    position: absolute;
-    bottom: 6%;
-    right: 8%;
-    width: 18%;
-    height: 3px;
-    border-radius: 1px;
+  .sp-label {
+    font-size: clamp(3px, 0.7vw, 6px);
+    color: #9393A8;
+    margin-top: 2px;
   }
 
   /* ── Card Info ── */
@@ -500,9 +601,7 @@ const categories = [...new Set(designs.map(d => d.category))];
     font-size: 12px;
     letter-spacing: -0.12px;
   }
-  .card-style {
-    color: rgba(255, 255, 255, 0.35);
-  }
+  .card-style { color: rgba(255, 255, 255, 0.35); }
   .card-ratio {
     color: rgba(255, 255, 255, 0.35);
     padding: 2px 8px;
@@ -524,9 +623,7 @@ const categories = [...new Set(designs.map(d => d.category))];
   }
   .cta-body {
     font-size: 21px;
-    font-weight: 400;
     color: var(--text-80);
-    letter-spacing: 0.1px;
     margin-bottom: 2rem;
   }
   .cta-links {
@@ -536,14 +633,11 @@ const categories = [...new Set(designs.map(d => d.category))];
     align-items: center;
   }
   .btn-pill-outline-dark {
-    display: inline-flex;
-    align-items: center;
     padding: 8px 22px;
     border-radius: 980px;
     border: 1px solid var(--near-black);
     color: var(--near-black);
     font-size: 17px;
-    font-weight: 400;
     letter-spacing: -0.374px;
     transition: all 0.2s;
   }
@@ -555,7 +649,6 @@ const categories = [...new Set(designs.map(d => d.category))];
     color: var(--blue-link);
     font-size: 17px;
     letter-spacing: -0.374px;
-    transition: opacity 0.2s;
   }
   .link-blue:hover { text-decoration: underline; }
 
@@ -579,13 +672,11 @@ const categories = [...new Set(designs.map(d => d.category))];
     .section-heading, .section-heading-light { font-size: 32px; }
     .steps { grid-template-columns: 1fr; gap: 0; }
     .grid { grid-template-columns: 1fr; }
-    .hero-cta { flex-direction: column; }
-    .cta-links { flex-direction: column; }
+    .hero-cta, .cta-links { flex-direction: column; }
   }
   @media (max-width: 480px) {
     .hero-title { font-size: 32px; }
     .hero { padding: 5rem 0 4rem; }
-    .nav-links { gap: 1rem; }
   }
 </style>
 
