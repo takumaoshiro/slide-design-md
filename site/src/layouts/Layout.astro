@@ -37,6 +37,129 @@ const { title } = Astro.props;
     </style>
   </head>
   <body>
-    <slot />
+    <!-- Password Gate -->
+    <div id="auth-gate">
+      <div class="auth-box">
+        <div class="auth-icon">▦</div>
+        <h1>slide-design-md</h1>
+        <p>閲覧にはパスワードが必要です</p>
+        <form id="auth-form">
+          <input type="password" id="auth-input" placeholder="パスワードを入力" autocomplete="off" />
+          <button type="submit">Enter</button>
+        </form>
+        <p id="auth-error" class="auth-error"></p>
+      </div>
+    </div>
+
+    <!-- Main Content (hidden until authenticated) -->
+    <div id="main-content" style="display:none;">
+      <slot />
+    </div>
+
+    <style is:global>
+      #auth-gate {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: var(--bg);
+      }
+      .auth-box {
+        text-align: center;
+        max-width: 360px;
+        padding: 2rem;
+      }
+      .auth-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--accent);
+      }
+      .auth-box h1 {
+        font-size: 1.8rem;
+        color: var(--white);
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.02em;
+      }
+      .auth-box > p {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+      }
+      #auth-form {
+        display: flex;
+        gap: 0.5rem;
+      }
+      #auth-input {
+        flex: 1;
+        padding: 0.65rem 1rem;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: var(--bg-card);
+        color: var(--white);
+        font-size: 0.95rem;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+      #auth-input:focus {
+        border-color: var(--accent);
+      }
+      #auth-form button {
+        padding: 0.65rem 1.2rem;
+        border-radius: 8px;
+        border: none;
+        background: var(--accent);
+        color: var(--white);
+        font-size: 0.95rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      #auth-form button:hover {
+        background: var(--accent-hover);
+      }
+      .auth-error {
+        color: #FF453A;
+        font-size: 0.85rem;
+        margin-top: 0.75rem;
+        min-height: 1.2em;
+      }
+    </style>
+
+    <script is:inline>
+      // SHA-256 hash of the password — password itself never appears in source
+      // To change the password, update this hash value
+      const PASS_HASH = 'fb18c395142dabb9f4c9c33ff9a82ac66baf7618b7572806f19e50c1cf9b1b04';
+
+      async function sha256(message) {
+        const msgBuffer = new TextEncoder().encode(message);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+      }
+
+      function unlock() {
+        document.getElementById('auth-gate').style.display = 'none';
+        document.getElementById('main-content').style.display = '';
+      }
+
+      // Check if already authenticated
+      if (sessionStorage.getItem('sdm-auth') === 'true') {
+        unlock();
+      }
+
+      document.getElementById('auth-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const input = document.getElementById('auth-input').value;
+        const hash = await sha256(input);
+        if (hash === PASS_HASH) {
+          sessionStorage.setItem('sdm-auth', 'true');
+          unlock();
+        } else {
+          document.getElementById('auth-error').textContent = 'パスワードが正しくありません';
+          document.getElementById('auth-input').value = '';
+          document.getElementById('auth-input').focus();
+        }
+      });
+    </script>
   </body>
 </html>
