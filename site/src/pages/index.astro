@@ -1,0 +1,385 @@
+---
+import Layout from '../layouts/Layout.astro';
+import designs from '../data/designs.json';
+
+const categories = [...new Set(designs.map(d => d.category))];
+---
+
+<Layout title="slide-design-md — Slide Design Systems for AI Agents">
+  <header>
+    <div class="container">
+      <div class="hero">
+        <div class="badge">
+          <span class="badge-icon">▦</span>
+          <span>{designs.length} DESIGN.md files</span>
+        </div>
+        <h1>slide-design-md</h1>
+        <p class="subtitle">
+          Slide design system inspirations for AI agents.<br />
+          Drop a <code>DESIGN.md</code> into your project — let AI generate on-brand presentations.
+        </p>
+        <div class="hero-actions">
+          <a href="https://github.com/takumaoshiro/slide-design-md" class="btn btn-primary" target="_blank">
+            GitHub →
+          </a>
+          <a href="#browse" class="btn btn-secondary">Browse designs</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="how-it-works">
+    <div class="container">
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Browse</h3>
+          <p>Find a slide design system that matches your needs</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Copy</h3>
+          <p>Add the <code>DESIGN.md</code> to your project</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Generate</h3>
+          <p>AI agents read the spec and produce consistent slides</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="browse" class="catalog">
+    <div class="container">
+      <h2>Design Systems</h2>
+      <div class="filters">
+        <button class="filter active" data-category="all">All</button>
+        {categories.map(cat => (
+          <button class="filter" data-category={cat}>{cat}</button>
+        ))}
+      </div>
+      <div class="grid">
+        {designs.map(design => (
+          <a href={`https://github.com/takumaoshiro/slide-design-md/blob/main/designs/${design.id}/DESIGN.md`}
+             class="card" data-category={design.category} target="_blank">
+            <div class="card-preview">
+              <div class="color-strip">
+                {design.colors.map(color => (
+                  <div class="color-dot" style={`background:${color};`} title={color}></div>
+                ))}
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-header">
+                <h3>{design.name}</h3>
+                <span class="card-badge">{design.aspectRatio}</span>
+              </div>
+              <p class="card-desc">{design.description}</p>
+              <div class="card-meta">
+                <span class="card-style">{design.style}</span>
+                <span class="card-fonts">{design.fonts[0]}</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Add your design system</h2>
+      <p>Copy the template, fill in your specs, and submit a PR.</p>
+      <a href="https://github.com/takumaoshiro/slide-design-md/blob/main/designs/_template/DESIGN.md"
+         class="btn btn-primary" target="_blank">
+        View template →
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>slide-design-md — Built for AI agents that create presentations.</p>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* Hero */
+  header {
+    padding: 6rem 0 4rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+  .badge-icon { font-size: 1rem; }
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.03em;
+    margin-bottom: 1rem;
+  }
+  .subtitle {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 550px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+  }
+  .subtitle code {
+    background: var(--bg-card);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: var(--accent);
+    border: 1px solid var(--border);
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.65rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--white);
+  }
+  .btn-primary:hover { background: var(--accent-hover); }
+  .btn-secondary {
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+  .btn-secondary:hover {
+    border-color: var(--text-muted);
+    color: var(--white);
+  }
+
+  /* How it works */
+  .how-it-works {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .how-it-works h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 2.5rem;
+  }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .step {
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .step h3 {
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .step p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+  .step code {
+    background: var(--bg-card);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: var(--accent);
+  }
+
+  /* Catalog */
+  .catalog {
+    padding: 4rem 0;
+  }
+  .catalog h2 {
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+  .filters {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  .filter {
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .filter:hover {
+    border-color: var(--text-muted);
+    color: var(--text);
+  }
+  .filter.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--white);
+  }
+
+  /* Cards grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.2s;
+  }
+  .card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--text-dim);
+    transform: translateY(-2px);
+  }
+  .card-preview {
+    padding: 1.5rem 1.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+  }
+  .color-strip {
+    display: flex;
+    gap: 0.75rem;
+  }
+  .color-dot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+  }
+  .card-body {
+    padding: 0 1.5rem 1.5rem;
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+  .card-header h3 {
+    font-size: 1.1rem;
+    color: var(--white);
+  }
+  .card-badge {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    background: var(--bg);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+  }
+  .card-desc {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+  .card-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+  }
+
+  /* CTA */
+  .cta {
+    padding: 4rem 0;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+  .cta h2 {
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+  }
+  .cta p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  /* Footer */
+  footer {
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim);
+    font-size: 0.85rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    .steps { grid-template-columns: 1fr; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.filter').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.dataset.category;
+      document.querySelectorAll('.card').forEach(card => {
+        if (cat === 'all' || card.dataset.category === cat) {
+          (card as HTMLElement).style.display = '';
+        } else {
+          (card as HTMLElement).style.display = 'none';
+        }
+      });
+    });
+  });
+</script>

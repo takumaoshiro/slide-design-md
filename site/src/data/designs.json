@@ -1,0 +1,32 @@
+[
+  {
+    "id": "ca-advance",
+    "name": "CA ADVANCE",
+    "description": "Minimal BtoB — white-base, professional, information-dense corporate reporting.",
+    "style": "Minimal BtoB",
+    "category": "Corporate",
+    "colors": ["#FFFFFF", "#1B4F8A", "#1A1A1A", "#E8EFF7"],
+    "aspectRatio": "16:9",
+    "fonts": ["Arial Black", "Calibri"]
+  },
+  {
+    "id": "tech-keynote",
+    "name": "Tech Keynote",
+    "description": "Dark, bold, Apple-inspired — high-impact keynote for product launches and tech talks.",
+    "style": "Dark Keynote",
+    "category": "Tech",
+    "colors": ["#0A0A0A", "#0A84FF", "#BF5AF2", "#FFFFFF"],
+    "aspectRatio": "16:9",
+    "fonts": ["SF Pro Display", "SF Mono"]
+  },
+  {
+    "id": "startup-pitch",
+    "name": "Startup Pitch",
+    "description": "Modern gradient, investor-facing — clean and confident pitch decks for fundraising.",
+    "style": "Modern Pitch",
+    "category": "Startup",
+    "colors": ["#FFFFFF", "#6366F1", "#8B5CF6", "#F8F9FC"],
+    "aspectRatio": "16:9",
+    "fonts": ["Inter", "Calibri"]
+  }
+]
