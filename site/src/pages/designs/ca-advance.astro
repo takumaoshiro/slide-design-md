@@ -1,5 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+import { marked } from 'marked';
+const mdPath = path.resolve('..', 'designs', 'ca-advance', 'DESIGN.md');
+const mdRaw = fs.readFileSync(mdPath, 'utf-8');
+const mdHtml = await marked(mdRaw);
 ---
 
 <Layout title="CA ADVANCE — slide-design-md">
@@ -223,7 +229,7 @@ import Layout from '../../layouts/Layout.astro';
       <!-- DESIGN.md tab -->
       <div id="tab-designmd" class="tab-content">
         <div class="md-frame">
-          <iframe src="https://github.com/takumaoshiro/slide-design-md/blob/main/designs/ca-advance/DESIGN.md" width="100%" style="height:2400px;border:none;border-radius:8px;"></iframe>
+          <div class="md-body" set:html={mdHtml} />
         </div>
       </div>
 
@@ -325,7 +331,23 @@ import Layout from '../../layouts/Layout.astro';
   .ca-type-meta { font-size: clamp(4px, 0.6vw, 7px); color: #999999; flex-shrink: 0; margin-left: 4%; }
 
   /* DESIGN.md frame */
-  .md-frame { border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; overflow: hidden; background: #fff; }
+  .md-frame { border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; overflow: hidden; background: #fff; padding: 2rem 2.5rem; }
+  .md-body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif; font-size: 15px; color: #1d1d1f; line-height: 1.6; }
+  .md-body h1 { font-size: 28px; font-weight: 600; margin: 2rem 0 1rem; color: #1d1d1f; border-bottom: 1px solid #e5e7f0; padding-bottom: 0.5rem; }
+  .md-body h2 { font-size: 22px; font-weight: 600; margin: 2rem 0 0.75rem; color: #1d1d1f; }
+  .md-body h3 { font-size: 17px; font-weight: 600; margin: 1.5rem 0 0.5rem; color: #1d1d1f; }
+  .md-body p { margin: 0.75rem 0; }
+  .md-body ul, .md-body ol { margin: 0.5rem 0; padding-left: 1.5rem; }
+  .md-body li { margin: 0.25rem 0; }
+  .md-body code { font-family: 'SF Mono','Consolas',monospace; font-size: 13px; background: #f5f5f7; padding: 2px 6px; border-radius: 4px; }
+  .md-body pre { background: #1d1d1f; color: #e0e0e0; padding: 1rem 1.25rem; border-radius: 8px; overflow-x: auto; margin: 1rem 0; }
+  .md-body pre code { background: none; padding: 0; color: inherit; font-size: 13px; }
+  .md-body table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 14px; }
+  .md-body th { text-align: left; font-weight: 600; padding: 8px 12px; border-bottom: 2px solid #e5e7f0; }
+  .md-body td { padding: 8px 12px; border-bottom: 1px solid #e5e7f0; }
+  .md-body hr { border: none; border-top: 1px solid #e5e7f0; margin: 2rem 0; }
+  .md-body strong { font-weight: 600; }
+  .md-body blockquote { border-left: 3px solid #0071e3; margin: 1rem 0; padding: 0.5rem 1rem; background: #f5f5f7; border-radius: 0 4px 4px 0; }
 
   footer { background: var(--light-bg); padding: 2rem 0; text-align: center; border-top: 1px solid rgba(0,0,0,0.06); }
   footer p { font-size: 12px; color: var(--text-48); }
