@@ -1,0 +1,429 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+import { marked } from 'marked';
+const mdPath = path.resolve('..', 'designs', 'deloitte', 'DESIGN.md');
+const mdRaw = fs.readFileSync(mdPath, 'utf-8');
+const mdHtml = await marked(mdRaw);
+---
+
+<Layout title="Deloitte — slide-design-md">
+  <nav>
+    <div class="nav-inner">
+      <a href="/slide-design-md/" class="nav-back">&larr; Back to designs</a>
+      <a href="https://github.com/takumaoshiro/slide-design-md" class="nav-gh" target="_blank">GitHub</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="detail-header">
+    <div class="container">
+      <h1>Deloitte</h1>
+      <p class="detail-tagline">Professional services. Green accent, structured, insight-led presentations for enterprise audiences.</p>
+    </div>
+  </section>
+
+  <!-- Usage -->
+  <section class="usage">
+    <div class="container">
+      <div class="usage-grid">
+        <div class="usage-cmd">
+          <div class="cmd-box">
+            <code>curl -o DESIGN.md https://raw.githubusercontent.com/takumaoshiro/slide-design-md/main/designs/deloitte/DESIGN.md</code>
+            <button class="copy-btn" data-copy="curl -o DESIGN.md https://raw.githubusercontent.com/takumaoshiro/slide-design-md/main/designs/deloitte/DESIGN.md" title="Copy">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.5"/></svg>
+            </button>
+          </div>
+          <p class="cmd-help">Run from your project root, then ask your AI assistant to use DESIGN.md for slide generation.</p>
+        </div>
+        <div class="usage-info">
+          <span class="info-badge">16:9</span>
+          <span class="info-badge">Open Sans / Arial</span>
+          <span class="info-badge">Professional Services</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preview tabs -->
+  <section class="preview-section">
+    <div class="container">
+      <div class="tabs-bar">
+        <h2>Preview</h2>
+        <div class="tabs">
+          <button class="tab active" data-tab="preview">Slide Preview</button>
+          <button class="tab" data-tab="designmd">DESIGN.md</button>
+        </div>
+      </div>
+
+      <!-- Slide Preview -->
+      <div id="tab-preview" class="tab-content active">
+        <div class="slides-grid">
+
+          <!-- Cover Slide -->
+          <div class="slide-label">01 — Cover</div>
+          <div class="slide-frame">
+            <div class="s dl-s">
+              <div class="dl-line"></div>
+              <div class="dl-body center">
+                <div class="dl-h0">Digital Transformation Readiness</div>
+                <div class="dl-sep"></div>
+                <div class="dl-sub0">Enterprise Assessment — Q1 2025</div>
+                <div class="dl-cover-meta">Prepared for: Global Corp Inc. | Confidential</div>
+                <div class="dl-logo-text">Deloitte.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Slide -->
+          <div class="slide-label">02 — Content</div>
+          <div class="slide-frame">
+            <div class="s dl-s">
+              <div class="dl-line"></div>
+              <div class="dl-inner">
+                <div class="dl-h1">Legacy systems are the primary barrier to digital acceleration</div>
+                <div class="dl-sub1">Key findings from stakeholder interviews and system audit</div>
+                <div class="dl-hr"></div>
+                <div class="dl-cols">
+                  <div class="dl-card">
+                    <div class="dl-card-bar" style="background:#86BC25;"></div>
+                    <div class="dl-card-inner">
+                      <div class="dl-card-title">Finding</div>
+                      <div class="dl-card-text">72% of core workflows depend on systems older than 10 years with no API layer</div>
+                    </div>
+                  </div>
+                  <div class="dl-card">
+                    <div class="dl-card-bar" style="background:#0076A8;"></div>
+                    <div class="dl-card-inner">
+                      <div class="dl-card-title">Recommendation</div>
+                      <div class="dl-card-text">Implement API gateway as middleware layer to decouple front-end modernization</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dl-source">Source: Deloitte Digital Maturity Assessment, 2025</div>
+                <div class="dl-footer-row">
+                  <span class="dl-page-num">2</span>
+                  <span class="dl-footer-text">Deloitte.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Slide -->
+          <div class="slide-label">03 — Data / Table</div>
+          <div class="slide-frame">
+            <div class="s dl-s">
+              <div class="dl-line"></div>
+              <div class="dl-inner">
+                <div class="dl-h1">Cloud migration reduces operational costs by 34% within 18 months</div>
+                <div class="dl-sub1">Cost comparison across infrastructure models</div>
+                <div class="dl-hr"></div>
+                <table class="dl-table">
+                  <thead>
+                    <tr>
+                      <th>Infrastructure</th><th>Annual Cost</th><th>Uptime</th><th>Scalability</th><th>ROI (3yr)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>On-Premise</td><td>$4.2M</td><td>99.1%</td><td>Low</td><td style="color:#DA291C;">-12%</td></tr>
+                    <tr><td>Hybrid Cloud</td><td>$3.1M</td><td>99.7%</td><td>Medium</td><td style="color:#86BC25;">+18%</td></tr>
+                    <tr><td>Public Cloud</td><td>$2.4M</td><td>99.95%</td><td>High</td><td style="color:#86BC25;">+34%</td></tr>
+                    <tr><td>Multi-Cloud</td><td>$2.8M</td><td>99.99%</td><td>High</td><td style="color:#86BC25;">+28%</td></tr>
+                  </tbody>
+                </table>
+                <div class="dl-source">Source: Deloitte Cloud Infrastructure Benchmark, 2024</div>
+                <div class="dl-footer-row">
+                  <span class="dl-page-num">3</span>
+                  <span class="dl-footer-text">Deloitte.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- KPI Slide -->
+          <div class="slide-label">04 — KPI Dashboard</div>
+          <div class="slide-frame">
+            <div class="s dl-s">
+              <div class="dl-line"></div>
+              <div class="dl-inner">
+                <div class="dl-h1">Digital maturity score improved across all dimensions</div>
+                <div class="dl-sub1">Assessment results — pre vs. post engagement</div>
+                <div class="dl-hr"></div>
+                <div class="dl-kpis">
+                  <div class="dl-kpi">
+                    <div class="dl-kpi-num" style="color:#86BC25;">78%</div>
+                    <div class="dl-kpi-label">Digital Maturity</div>
+                  </div>
+                  <div class="dl-kpi">
+                    <div class="dl-kpi-num" style="color:#86BC25;">+34%</div>
+                    <div class="dl-kpi-label">Cost Reduction</div>
+                  </div>
+                  <div class="dl-kpi">
+                    <div class="dl-kpi-num" style="color:#0076A8;">4.2x</div>
+                    <div class="dl-kpi-label">ROI Multiple</div>
+                  </div>
+                  <div class="dl-kpi">
+                    <div class="dl-kpi-num" style="color:#DA291C;">-41%</div>
+                    <div class="dl-kpi-label">Incident Rate</div>
+                  </div>
+                </div>
+                <div class="dl-source">Source: Deloitte Digital Maturity Index, 2025</div>
+                <div class="dl-footer-row">
+                  <span class="dl-page-num">4</span>
+                  <span class="dl-footer-text">Deloitte.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Color Palette -->
+          <div class="slide-label">05 — Color Palette</div>
+          <div class="slide-frame">
+            <div class="s dl-s">
+              <div class="dl-line"></div>
+              <div class="dl-inner">
+                <div class="dl-h1">Color Palette</div>
+                <div class="dl-hr"></div>
+                <div class="dl-palette">
+                  <div class="dl-swatch"><div class="swatch-block" style="background:#86BC25;"></div><div class="swatch-name">Deloitte Green<br/>#86BC25</div></div>
+                  <div class="dl-swatch"><div class="swatch-block" style="background:#43B02A;"></div><div class="swatch-name">Dark Green<br/>#43B02A</div></div>
+                  <div class="dl-swatch"><div class="swatch-block" style="background:#0076A8;"></div><div class="swatch-name">Teal<br/>#0076A8</div></div>
+                  <div class="dl-swatch"><div class="swatch-block" style="background:#000000;"></div><div class="swatch-name">Black<br/>#000000</div></div>
+                  <div class="dl-swatch"><div class="swatch-block" style="background:#333333;"></div><div class="swatch-name">Body<br/>#333333</div></div>
+                  <div class="dl-swatch"><div class="swatch-block" style="background:#767676;"></div><div class="swatch-name">Muted<br/>#767676</div></div>
+                  <div class="dl-swatch"><div class="swatch-block" style="background:#D0D0D0;"></div><div class="swatch-name">Border<br/>#D0D0D0</div></div>
+                  <div class="dl-swatch"><div class="swatch-block" style="background:#F2F2F2;"></div><div class="swatch-name">Light BG<br/>#F2F2F2</div></div>
+                  <div class="dl-swatch"><div class="swatch-block" style="background:#DA291C;"></div><div class="swatch-name">Negative<br/>#DA291C</div></div>
+                </div>
+                <div class="dl-footer-row" style="margin-top:auto;">
+                  <span class="dl-page-num">5</span>
+                  <span class="dl-footer-text">Deloitte.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Typography -->
+          <div class="slide-label">06 — Typography</div>
+          <div class="slide-frame">
+            <div class="s dl-s">
+              <div class="dl-line"></div>
+              <div class="dl-inner">
+                <div class="dl-h1">Typography Scale</div>
+                <div class="dl-hr"></div>
+                <div class="dl-type-samples">
+                  <div class="dl-type-row">
+                    <span class="dl-type-demo" style="font-family:'Open Sans',Arial,sans-serif;font-size:14px;font-weight:700;color:#000000;">Slide Title — 24pt Open Sans Bold</span>
+                    <span class="dl-type-meta">Bold · #000000</span>
+                  </div>
+                  <div class="dl-type-row">
+                    <span class="dl-type-demo" style="font-family:'Open Sans',Arial,sans-serif;font-size:10px;font-weight:700;color:#86BC25;">Section Heading — 14pt Bold</span>
+                    <span class="dl-type-meta">Bold · Deloitte Green</span>
+                  </div>
+                  <div class="dl-type-row">
+                    <span class="dl-type-demo" style="font-family:'Open Sans',Arial,sans-serif;font-size:9px;color:#333333;">Body text — 11pt Regular. Standard reading size for insight-led content.</span>
+                    <span class="dl-type-meta">Regular · #333333</span>
+                  </div>
+                  <div class="dl-type-row">
+                    <span class="dl-type-demo" style="font-family:'Open Sans',Arial,sans-serif;font-size:9px;color:#767676;">Subtitle — 13pt Regular</span>
+                    <span class="dl-type-meta">Regular · #767676</span>
+                  </div>
+                  <div class="dl-type-row">
+                    <span class="dl-type-demo" style="font-family:'Open Sans',Arial,sans-serif;font-size:7px;font-style:italic;color:#767676;">Source: Deloitte Analysis, 2025 — 7pt Italic</span>
+                    <span class="dl-type-meta">Italic · #767676</span>
+                  </div>
+                </div>
+                <div class="dl-footer-row" style="margin-top:auto;">
+                  <span class="dl-page-num">6</span>
+                  <span class="dl-footer-text">Deloitte.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- DESIGN.md tab -->
+      <div id="tab-designmd" class="tab-content">
+        <div class="md-frame">
+          <div class="md-toolbar">
+            <button class="copy-md-btn" id="copy-md">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.5"/></svg>
+              <span>Copy DESIGN.md</span>
+            </button>
+          </div>
+          <div class="md-body" set:html={mdHtml} />
+        </div>
+        <textarea id="md-raw" style="display:none;">{mdRaw}</textarea>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>slide-design-md &mdash; Built for AI agents that create presentations.</p>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(0,0,0,0.8); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); height: 48px; }
+  .nav-inner { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+  .nav-back { font-size: 14px; color: #2997ff; letter-spacing: -0.224px; }
+  .nav-back:hover { text-decoration: underline; }
+  .nav-gh { font-size: 12px; color: #f5f5f7; opacity: 0.8; }
+  .container { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .detail-header { background: var(--black); padding: 3rem 0 2.5rem; }
+  .detail-header h1 { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif; font-size: 40px; font-weight: 600; color: var(--white); line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 0.5rem; }
+  .detail-tagline { font-size: 17px; color: rgba(255,255,255,0.55); letter-spacing: -0.374px; }
+
+  .usage { background: var(--black); padding: 0 0 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .usage-grid { display: flex; gap: 2rem; align-items: flex-start; }
+  .usage-cmd { flex: 1; }
+  .cmd-box { background: #0a0a0a; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 16px; display: flex; align-items: center; gap: 12px; position: relative; }
+  .cmd-box code { font-family: 'SF Mono','Consolas',monospace; font-size: 13px; color: #e0e0e0; word-break: break-all; flex: 1; }
+  .copy-btn { background: none; border: none; color: rgba(255,255,255,0.4); cursor: pointer; padding: 4px; transition: color 0.2s; flex-shrink: 0; }
+  .copy-btn:hover { color: var(--white); }
+  .cmd-help { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 0.5rem; letter-spacing: -0.12px; }
+  .usage-info { display: flex; gap: 0.5rem; flex-wrap: wrap; padding-top: 4px; }
+  .info-badge { font-size: 12px; color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 4px 10px; letter-spacing: -0.12px; }
+
+  .preview-section { background: var(--light-bg); padding: 3rem 0 4rem; }
+  .tabs-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+  .tabs-bar h2 { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif; font-size: 28px; font-weight: 600; color: var(--near-black); }
+  .tabs { display: flex; border: 1px solid rgba(0,0,0,0.15); border-radius: 8px; overflow: hidden; }
+  .tab { padding: 6px 18px; font-size: 14px; font-family: inherit; letter-spacing: -0.224px; border: none; background: transparent; color: var(--text-80); cursor: pointer; transition: all 0.2s; }
+  .tab.active { background: var(--near-black); color: var(--white); }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* Slides grid */
+  .slides-grid { display: flex; flex-direction: column; gap: 1rem; }
+  .slide-label { font-size: 12px; font-weight: 600; color: var(--text-48); letter-spacing: 0.5px; text-transform: uppercase; margin-top: 1rem; }
+  .slide-frame { border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+
+  /* Base slide */
+  .s { width: 100%; aspect-ratio: 16/9; position: relative; overflow: hidden; }
+  .dl-s { background: #FFFFFF; font-family: 'Open Sans', Arial, sans-serif; }
+  .dl-line { position: absolute; top: 0; left: 0; right: 0; height: 4px; background: #86BC25; }
+
+  /* Cover */
+  .dl-body.center { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; padding: 8%; gap: 2.5%; }
+  .dl-h0 { font-size: clamp(14px, 3vw, 36px); font-weight: 700; color: #000000; text-align: center; }
+  .dl-sep { width: 15%; height: 2px; background: #86BC25; }
+  .dl-sub0 { font-size: clamp(7px, 1.1vw, 13px); color: #767676; }
+  .dl-cover-meta { font-size: clamp(5px, 0.8vw, 9px); color: #767676; margin-top: 1%; }
+  .dl-logo-text { font-size: clamp(8px, 1.4vw, 16px); font-weight: 700; color: #000000; margin-top: 2%; }
+
+  /* Inner layout */
+  .dl-inner { padding: 5% 6% 4%; height: 100%; display: flex; flex-direction: column; margin-top: 4px; }
+  .dl-h1 { font-size: clamp(9px, 1.8vw, 24px); font-weight: 700; color: #000000; line-height: 1.3; }
+  .dl-sub1 { font-size: clamp(6px, 1vw, 13px); color: #767676; margin-top: 1%; }
+  .dl-hr { width: 100%; height: 1px; background: #D0D0D0; margin: 2% 0; }
+  .dl-source { font-size: clamp(4px, 0.6vw, 7px); color: #767676; font-style: italic; margin-top: auto; padding-top: 2%; }
+  .dl-footer-row { display: flex; justify-content: space-between; align-items: center; margin-top: 1%; }
+  .dl-page-num { font-size: clamp(5px, 0.7vw, 8px); color: #767676; }
+  .dl-footer-text { font-size: clamp(5px, 0.8vw, 9px); color: #000000; font-weight: 700; }
+
+  /* Cards */
+  .dl-cols { display: flex; gap: 3%; flex: 1; margin-top: 1%; }
+  .dl-card { flex: 1; background: #F2F2F2; display: flex; overflow: hidden; }
+  .dl-card-bar { width: 4px; flex-shrink: 0; }
+  .dl-card-inner { padding: 3% 4%; }
+  .dl-card-title { font-size: clamp(6px, 1vw, 12px); font-weight: 700; color: #86BC25; margin-bottom: 2%; }
+  .dl-card-text { font-size: clamp(5px, 0.85vw, 10px); color: #333333; line-height: 1.4; }
+
+  /* Table */
+  .dl-table { width: 100%; border-collapse: collapse; flex: 1; }
+  .dl-table th { background: #86BC25; color: #FFFFFF; font-size: clamp(5px, 0.85vw, 10px); font-weight: 700; padding: 1.5% 2%; text-align: left; }
+  .dl-table td { font-size: clamp(5px, 0.85vw, 10px); color: #333333; padding: 1.5% 2%; border-bottom: 1px solid #D0D0D0; }
+
+  /* KPI */
+  .dl-kpis { display: flex; gap: 2.5%; margin-top: 2%; flex: 1; }
+  .dl-kpi { flex: 1; background: #F2F2F2; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2%; border-top: 3px solid #86BC25; }
+  .dl-kpi-num { font-size: clamp(10px, 2.2vw, 28px); font-weight: 700; }
+  .dl-kpi-label { font-size: clamp(5px, 0.8vw, 10px); margin-top: 2%; color: #767676; }
+
+  /* Palette */
+  .dl-palette { display: flex; flex-wrap: wrap; gap: 2%; margin-top: 2%; }
+  .dl-swatch { display: flex; flex-direction: column; align-items: center; width: 9%; }
+  .swatch-block { width: 100%; aspect-ratio: 1; border-radius: 4px; border: 1px solid #D0D0D0; }
+  .swatch-name { font-size: clamp(4px, 0.6vw, 7px); color: #333333; text-align: center; margin-top: 4px; line-height: 1.3; }
+
+  /* Typography */
+  .dl-type-samples { display: flex; flex-direction: column; gap: 3%; margin-top: 2%; flex: 1; }
+  .dl-type-row { display: flex; justify-content: space-between; align-items: baseline; padding: 1.5% 0; border-bottom: 1px solid #F2F2F2; }
+  .dl-type-demo { flex: 1; }
+  .dl-type-meta { font-size: clamp(4px, 0.6vw, 7px); color: #767676; flex-shrink: 0; margin-left: 4%; }
+
+  /* DESIGN.md frame */
+  .md-frame { border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; overflow: hidden; background: #fff; padding: 0 2.5rem 2rem; }
+  .md-toolbar { display: flex; justify-content: flex-end; padding: 1rem 0; position: sticky; top: 48px; background: #fff; z-index: 10; border-bottom: 1px solid #e5e7f0; }
+  .copy-md-btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 6px; border: 1px solid rgba(0,0,0,0.15); background: #fff; color: var(--near-black); font-size: 13px; font-family: inherit; letter-spacing: -0.12px; cursor: pointer; transition: all 0.2s; }
+  .copy-md-btn:hover { background: var(--light-bg); border-color: rgba(0,0,0,0.3); }
+  .copy-md-btn.copied { background: #e8f5e9; border-color: #2e7d32; color: #2e7d32; }
+  .md-body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif; font-size: 15px; color: #1d1d1f; line-height: 1.6; }
+  .md-body h1 { font-size: 28px; font-weight: 600; margin: 2rem 0 1rem; color: #1d1d1f; border-bottom: 1px solid #e5e7f0; padding-bottom: 0.5rem; }
+  .md-body h2 { font-size: 22px; font-weight: 600; margin: 2rem 0 0.75rem; color: #1d1d1f; }
+  .md-body h3 { font-size: 17px; font-weight: 600; margin: 1.5rem 0 0.5rem; color: #1d1d1f; }
+  .md-body p { margin: 0.75rem 0; }
+  .md-body ul, .md-body ol { margin: 0.5rem 0; padding-left: 1.5rem; }
+  .md-body li { margin: 0.25rem 0; }
+  .md-body code { font-family: 'SF Mono','Consolas',monospace; font-size: 13px; background: #f5f5f7; padding: 2px 6px; border-radius: 4px; }
+  .md-body pre { background: #1d1d1f; color: #e0e0e0; padding: 1rem 1.25rem; border-radius: 8px; overflow-x: auto; margin: 1rem 0; }
+  .md-body pre code { background: none; padding: 0; color: inherit; font-size: 13px; }
+  .md-body table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 14px; }
+  .md-body th { text-align: left; font-weight: 600; padding: 8px 12px; border-bottom: 2px solid #e5e7f0; }
+  .md-body td { padding: 8px 12px; border-bottom: 1px solid #e5e7f0; }
+  .md-body hr { border: none; border-top: 1px solid #e5e7f0; margin: 2rem 0; }
+  .md-body strong { font-weight: 600; }
+  .md-body blockquote { border-left: 3px solid #0071e3; margin: 1rem 0; padding: 0.5rem 1rem; background: #f5f5f7; border-radius: 0 4px 4px 0; }
+
+  footer { background: var(--light-bg); padding: 2rem 0; text-align: center; border-top: 1px solid rgba(0,0,0,0.06); }
+  footer p { font-size: 12px; color: var(--text-48); }
+
+  @media (max-width: 834px) {
+    .usage-grid { flex-direction: column; }
+    .detail-header h1 { font-size: 32px; }
+  }
+</style>
+
+<script>
+  // Tab switching
+  document.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      const target = (btn as HTMLElement).dataset.tab;
+      document.getElementById('tab-' + target)?.classList.add('active');
+    });
+  });
+  // Copy command button
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const text = (btn as HTMLElement).dataset.copy || '';
+      navigator.clipboard.writeText(text);
+      btn.innerHTML = '<span style="font-size:12px;color:#2E7D32;">Copied!</span>';
+      setTimeout(() => {
+        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.5"/></svg>';
+      }, 1500);
+    });
+  });
+  // Copy DESIGN.md
+  document.getElementById('copy-md')?.addEventListener('click', () => {
+    const raw = (document.getElementById('md-raw') as HTMLTextAreaElement)?.value || '';
+    navigator.clipboard.writeText(raw);
+    const btn = document.getElementById('copy-md')!;
+    btn.classList.add('copied');
+    btn.querySelector('span')!.textContent = 'Copied!';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.querySelector('span')!.textContent = 'Copy DESIGN.md';
+    }, 2000);
+  });
+</script>

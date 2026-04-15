@@ -1,0 +1,394 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+import { marked } from 'marked';
+const mdPath = path.resolve('..', 'designs', 'nike', 'DESIGN.md');
+const mdRaw = fs.readFileSync(mdPath, 'utf-8');
+const mdHtml = await marked(mdRaw);
+---
+
+<Layout title="Nike — slide-design-md">
+  <nav>
+    <div class="nav-inner">
+      <a href="/slide-design-md/" class="nav-back">&larr; Back to designs</a>
+      <a href="https://github.com/takumaoshiro/slide-design-md" class="nav-gh" target="_blank">GitHub</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="detail-header">
+    <div class="container">
+      <h1>NIKE</h1>
+      <p class="detail-tagline">Bold athletic. Black/white contrast, dynamic energy, brand storytelling.</p>
+    </div>
+  </section>
+
+  <!-- Usage -->
+  <section class="usage">
+    <div class="container">
+      <div class="usage-grid">
+        <div class="usage-cmd">
+          <div class="cmd-box">
+            <code>curl -o DESIGN.md https://raw.githubusercontent.com/takumaoshiro/slide-design-md/main/designs/nike/DESIGN.md</code>
+            <button class="copy-btn" data-copy="curl -o DESIGN.md https://raw.githubusercontent.com/takumaoshiro/slide-design-md/main/designs/nike/DESIGN.md" title="Copy">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.5"/></svg>
+            </button>
+          </div>
+          <p class="cmd-help">Run from your project root, then ask your AI assistant to use DESIGN.md for slide generation.</p>
+        </div>
+        <div class="usage-info">
+          <span class="info-badge">16:9</span>
+          <span class="info-badge">Futura / Helvetica Neue</span>
+          <span class="info-badge">Brand</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preview tabs -->
+  <section class="preview-section">
+    <div class="container">
+      <div class="tabs-bar">
+        <h2>Preview</h2>
+        <div class="tabs">
+          <button class="tab active" data-tab="preview">Slide Preview</button>
+          <button class="tab" data-tab="designmd">DESIGN.md</button>
+        </div>
+      </div>
+
+      <!-- Slide Preview -->
+      <div id="tab-preview" class="tab-content active">
+        <div class="slides-grid">
+
+          <!-- Cover Slide -->
+          <div class="slide-label">01 — Cover</div>
+          <div class="slide-frame">
+            <div class="s nk-s">
+              <div class="nk-body center">
+                <div class="nk-h0">JUST DO IT.</div>
+                <div class="nk-sub0">Brand Campaign — Q4 2025</div>
+                <div class="nk-swoosh">
+                  <svg viewBox="0 0 69 32" fill="none"><path d="M68.56 1.59C45.08 13.72 25.52 24.6 7.09 29.55c-3.87 1.04-7.67 1.17-10.22-.07C-6.2 27.8 2.3 21.94 9.82 18.2c.47-.23.93-.46 1.4-.68C27.9 10.1 46.96 3.33 68.56 1.59z" fill="#FFFFFF"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Slide -->
+          <div class="slide-label">02 — Content</div>
+          <div class="slide-frame">
+            <div class="s nk-s">
+              <div class="nk-inner">
+                <div class="nk-h1">THE FUTURE OF SPORT</div>
+                <div class="nk-sub1">Innovation drives everything we do</div>
+                <div class="nk-cols">
+                  <div class="nk-card">
+                    <div class="nk-card-title">FLYKNIT TECHNOLOGY</div>
+                    <div class="nk-card-text">Precision-engineered yarns and fabric variations, creating lightweight uppers with targeted support.</div>
+                  </div>
+                  <div class="nk-card">
+                    <div class="nk-card-title">AIR MAX INNOVATION</div>
+                    <div class="nk-card-text">Visible Air technology delivering maximum impact protection and responsive cushioning for athletes.</div>
+                  </div>
+                </div>
+                <div class="nk-footer-text">
+                  <svg class="nk-footer-swoosh" viewBox="0 0 69 32" fill="none"><path d="M68.56 1.59C45.08 13.72 25.52 24.6 7.09 29.55c-3.87 1.04-7.67 1.17-10.22-.07C-6.2 27.8 2.3 21.94 9.82 18.2c.47-.23.93-.46 1.4-.68C27.9 10.1 46.96 3.33 68.56 1.59z" fill="#767676"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Slide -->
+          <div class="slide-label">03 — Data / Table</div>
+          <div class="slide-frame">
+            <div class="s nk-s">
+              <div class="nk-inner">
+                <div class="nk-h1">GLOBAL REVENUE</div>
+                <div class="nk-sub1">FY2025 regional performance breakdown</div>
+                <table class="nk-table">
+                  <thead>
+                    <tr>
+                      <th>REGION</th><th>REVENUE</th><th>GROWTH</th><th>MARKET SHARE</th><th>TREND</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>North America</td><td>$18.4B</td><td style="color:#CCFF00;">+14%</td><td>27.3%</td><td style="color:#CCFF00;">+2.1pp</td></tr>
+                    <tr><td>EMEA</td><td>$12.1B</td><td>+8%</td><td>21.6%</td><td>+0.8pp</td></tr>
+                    <tr><td>Greater China</td><td>$7.2B</td><td>+22%</td><td>18.9%</td><td style="color:#CCFF00;">+3.4pp</td></tr>
+                    <tr><td>APLA</td><td>$5.8B</td><td>+11%</td><td>15.2%</td><td>+1.2pp</td></tr>
+                  </tbody>
+                </table>
+                <div class="nk-footer-text">
+                  <svg class="nk-footer-swoosh" viewBox="0 0 69 32" fill="none"><path d="M68.56 1.59C45.08 13.72 25.52 24.6 7.09 29.55c-3.87 1.04-7.67 1.17-10.22-.07C-6.2 27.8 2.3 21.94 9.82 18.2c.47-.23.93-.46 1.4-.68C27.9 10.1 46.96 3.33 68.56 1.59z" fill="#767676"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- KPI Slide -->
+          <div class="slide-label">04 — KPI Dashboard</div>
+          <div class="slide-frame">
+            <div class="s nk-s">
+              <div class="nk-inner">
+                <div class="nk-h1">KEY METRICS</div>
+                <div class="nk-sub1">FY2025 performance at a glance</div>
+                <div class="nk-kpis">
+                  <div class="nk-kpi">
+                    <div class="nk-kpi-num" style="color:#CCFF00;">$51.2B</div>
+                    <div class="nk-kpi-label">TOTAL REVENUE</div>
+                  </div>
+                  <div class="nk-kpi">
+                    <div class="nk-kpi-num">+14%</div>
+                    <div class="nk-kpi-label">YOY GROWTH</div>
+                  </div>
+                  <div class="nk-kpi">
+                    <div class="nk-kpi-num">$4.8B</div>
+                    <div class="nk-kpi-label">DTC REVENUE</div>
+                  </div>
+                  <div class="nk-kpi">
+                    <div class="nk-kpi-num">78.3M</div>
+                    <div class="nk-kpi-label">MEMBERS</div>
+                  </div>
+                </div>
+                <div class="nk-footer-text">
+                  <svg class="nk-footer-swoosh" viewBox="0 0 69 32" fill="none"><path d="M68.56 1.59C45.08 13.72 25.52 24.6 7.09 29.55c-3.87 1.04-7.67 1.17-10.22-.07C-6.2 27.8 2.3 21.94 9.82 18.2c.47-.23.93-.46 1.4-.68C27.9 10.1 46.96 3.33 68.56 1.59z" fill="#767676"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Color Palette -->
+          <div class="slide-label">05 — Color Palette</div>
+          <div class="slide-frame">
+            <div class="s nk-s">
+              <div class="nk-inner">
+                <div class="nk-h1">COLOR PALETTE</div>
+                <div class="nk-palette">
+                  <div class="nk-swatch"><div class="swatch-block" style="background:#000000;border:1px solid #333;"></div><div class="swatch-name">Black<br/>#000000</div></div>
+                  <div class="nk-swatch"><div class="swatch-block" style="background:#FFFFFF;border:1px solid #333;"></div><div class="swatch-name">White<br/>#FFFFFF</div></div>
+                  <div class="nk-swatch"><div class="swatch-block" style="background:#CCFF00;"></div><div class="swatch-name">Volt<br/>#CCFF00</div></div>
+                  <div class="nk-swatch"><div class="swatch-block" style="background:#1A1A1A;border:1px solid #333;"></div><div class="swatch-name">Dark Gray<br/>#1A1A1A</div></div>
+                  <div class="nk-swatch"><div class="swatch-block" style="background:#767676;"></div><div class="swatch-name">Mid Gray<br/>#767676</div></div>
+                  <div class="nk-swatch"><div class="swatch-block" style="background:#F5F5F5;border:1px solid #333;"></div><div class="swatch-name">Light Gray<br/>#F5F5F5</div></div>
+                </div>
+                <div class="nk-footer-text">
+                  <svg class="nk-footer-swoosh" viewBox="0 0 69 32" fill="none"><path d="M68.56 1.59C45.08 13.72 25.52 24.6 7.09 29.55c-3.87 1.04-7.67 1.17-10.22-.07C-6.2 27.8 2.3 21.94 9.82 18.2c.47-.23.93-.46 1.4-.68C27.9 10.1 46.96 3.33 68.56 1.59z" fill="#767676"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Typography -->
+          <div class="slide-label">06 — Typography</div>
+          <div class="slide-frame">
+            <div class="s nk-s">
+              <div class="nk-inner">
+                <div class="nk-h1">TYPOGRAPHY</div>
+                <div class="nk-type-samples">
+                  <div class="nk-type-row">
+                    <span class="nk-type-demo" style="font-family:'Arial Black',sans-serif;font-size:clamp(14px,3vw,28px);font-weight:900;color:#FFFFFF;text-transform:uppercase;letter-spacing:2px;">HERO HEADLINE — 80pt+</span>
+                    <span class="nk-type-meta">Black 900 · #FFFFFF</span>
+                  </div>
+                  <div class="nk-type-row">
+                    <span class="nk-type-demo" style="font-family:'Arial Black',sans-serif;font-size:clamp(10px,2vw,18px);font-weight:900;color:#FFFFFF;text-transform:uppercase;letter-spacing:1px;">SLIDE TITLE — 48pt</span>
+                    <span class="nk-type-meta">Bold 700 · #FFFFFF</span>
+                  </div>
+                  <div class="nk-type-row">
+                    <span class="nk-type-demo" style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:clamp(8px,1.2vw,13px);font-weight:300;color:#767676;">Subtitle — 24pt Light</span>
+                    <span class="nk-type-meta">Light 300 · #767676</span>
+                  </div>
+                  <div class="nk-type-row">
+                    <span class="nk-type-demo" style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:clamp(7px,1vw,12px);font-weight:400;color:#FFFFFF;">Body text — 16pt Regular. Standard reading size for content.</span>
+                    <span class="nk-type-meta">Regular 400 · #FFFFFF</span>
+                  </div>
+                  <div class="nk-type-row">
+                    <span class="nk-type-demo" style="font-family:'Arial Black',sans-serif;font-size:clamp(12px,2.5vw,24px);font-weight:900;color:#CCFF00;">$51.2B</span>
+                    <span class="nk-type-meta">KPI · Volt #CCFF00</span>
+                  </div>
+                </div>
+                <div class="nk-footer-text">
+                  <svg class="nk-footer-swoosh" viewBox="0 0 69 32" fill="none"><path d="M68.56 1.59C45.08 13.72 25.52 24.6 7.09 29.55c-3.87 1.04-7.67 1.17-10.22-.07C-6.2 27.8 2.3 21.94 9.82 18.2c.47-.23.93-.46 1.4-.68C27.9 10.1 46.96 3.33 68.56 1.59z" fill="#767676"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- DESIGN.md tab -->
+      <div id="tab-designmd" class="tab-content">
+        <div class="md-frame">
+          <div class="md-toolbar">
+            <button class="copy-md-btn" id="copy-md">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.5"/></svg>
+              <span>Copy DESIGN.md</span>
+            </button>
+          </div>
+          <div class="md-body" set:html={mdHtml} />
+        </div>
+        <textarea id="md-raw" style="display:none;">{mdRaw}</textarea>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>slide-design-md &mdash; Built for AI agents that create presentations.</p>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(0,0,0,0.8); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); height: 48px; }
+  .nav-inner { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+  .nav-back { font-size: 14px; color: #2997ff; letter-spacing: -0.224px; }
+  .nav-back:hover { text-decoration: underline; }
+  .nav-gh { font-size: 12px; color: #f5f5f7; opacity: 0.8; }
+  .container { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .detail-header { background: var(--black); padding: 3rem 0 2.5rem; }
+  .detail-header h1 { font-family: 'Arial Black', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 48px; font-weight: 900; color: var(--white); line-height: 1.1; letter-spacing: 4px; margin-bottom: 0.5rem; text-transform: uppercase; }
+  .detail-tagline { font-size: 17px; color: rgba(255,255,255,0.55); letter-spacing: -0.374px; }
+
+  .usage { background: var(--black); padding: 0 0 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .usage-grid { display: flex; gap: 2rem; align-items: flex-start; }
+  .usage-cmd { flex: 1; }
+  .cmd-box { background: #0a0a0a; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 16px; display: flex; align-items: center; gap: 12px; position: relative; }
+  .cmd-box code { font-family: 'SF Mono','Consolas',monospace; font-size: 13px; color: #e0e0e0; word-break: break-all; flex: 1; }
+  .copy-btn { background: none; border: none; color: rgba(255,255,255,0.4); cursor: pointer; padding: 4px; transition: color 0.2s; flex-shrink: 0; }
+  .copy-btn:hover { color: var(--white); }
+  .cmd-help { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 0.5rem; letter-spacing: -0.12px; }
+  .usage-info { display: flex; gap: 0.5rem; flex-wrap: wrap; padding-top: 4px; }
+  .info-badge { font-size: 12px; color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 4px 10px; letter-spacing: -0.12px; }
+
+  .preview-section { background: var(--light-bg); padding: 3rem 0 4rem; }
+  .tabs-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+  .tabs-bar h2 { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif; font-size: 28px; font-weight: 600; color: var(--near-black); }
+  .tabs { display: flex; border: 1px solid rgba(0,0,0,0.15); border-radius: 8px; overflow: hidden; }
+  .tab { padding: 6px 18px; font-size: 14px; font-family: inherit; letter-spacing: -0.224px; border: none; background: transparent; color: var(--text-80); cursor: pointer; transition: all 0.2s; }
+  .tab.active { background: var(--near-black); color: var(--white); }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* Slides grid */
+  .slides-grid { display: flex; flex-direction: column; gap: 1rem; }
+  .slide-label { font-size: 12px; font-weight: 600; color: var(--text-48); letter-spacing: 0.5px; text-transform: uppercase; margin-top: 1rem; }
+  .slide-frame { border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+
+  /* Base slide */
+  .s { width: 100%; aspect-ratio: 16/9; position: relative; overflow: hidden; }
+  .nk-s { background: #000000; font-family: 'Helvetica Neue', Arial, sans-serif; }
+
+  /* Cover */
+  .nk-body.center { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; padding: 8%; gap: 4%; }
+  .nk-h0 { font-family: 'Arial Black', Arial, sans-serif; font-size: clamp(18px, 5vw, 60px); font-weight: 900; color: #FFFFFF; text-align: center; text-transform: uppercase; letter-spacing: 4px; }
+  .nk-sub0 { font-size: clamp(7px, 1.1vw, 14px); color: #767676; font-weight: 300; letter-spacing: 1px; }
+  .nk-swoosh { width: 8%; }
+  .nk-swoosh svg { width: 100%; height: auto; }
+
+  /* Inner layout */
+  .nk-inner { padding: 5% 6% 4%; height: 100%; display: flex; flex-direction: column; }
+  .nk-h1 { font-family: 'Arial Black', Arial, sans-serif; font-size: clamp(10px, 2.4vw, 24px); font-weight: 900; color: #FFFFFF; text-transform: uppercase; letter-spacing: 2px; }
+  .nk-sub1 { font-size: clamp(6px, 1vw, 12px); color: #767676; margin-top: 1%; font-weight: 300; }
+  .nk-footer-text { margin-top: auto; text-align: right; display: flex; justify-content: flex-end; align-items: center; }
+  .nk-footer-swoosh { width: clamp(16px, 3vw, 32px); height: auto; }
+
+  /* Cards */
+  .nk-cols { display: flex; gap: 3%; flex: 1; margin-top: 4%; }
+  .nk-card { flex: 1; background: #1A1A1A; padding: 4% 5%; }
+  .nk-card-title { font-family: 'Arial Black', Arial, sans-serif; font-size: clamp(6px, 1vw, 11px); font-weight: 900; color: #FFFFFF; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3%; }
+  .nk-card-text { font-size: clamp(5px, 0.85vw, 9px); color: #FFFFFF; line-height: 1.5; font-weight: 300; }
+
+  /* Table */
+  .nk-table { width: 100%; border-collapse: collapse; margin-top: 4%; flex: 1; }
+  .nk-table th { background: #CCFF00; color: #000000; font-family: 'Arial Black', Arial, sans-serif; font-size: clamp(5px, 0.8vw, 9px); font-weight: 900; padding: 1.5% 2%; text-align: left; text-transform: uppercase; letter-spacing: 0.5px; }
+  .nk-table td { font-size: clamp(5px, 0.85vw, 9px); color: #FFFFFF; padding: 1.5% 2%; border-bottom: 1px solid #1A1A1A; font-weight: 300; }
+
+  /* KPI */
+  .nk-kpis { display: flex; gap: 2.5%; margin-top: 4%; flex: 1; }
+  .nk-kpi { flex: 1; background: #1A1A1A; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3%; }
+  .nk-kpi-num { font-family: 'Arial Black', Arial, sans-serif; font-size: clamp(12px, 2.5vw, 28px); font-weight: 900; color: #FFFFFF; }
+  .nk-kpi-label { font-size: clamp(5px, 0.7vw, 8px); color: #FFFFFF; margin-top: 4%; text-transform: uppercase; letter-spacing: 1px; font-weight: 300; }
+
+  /* Palette */
+  .nk-palette { display: flex; flex-wrap: wrap; gap: 3%; margin-top: 4%; }
+  .nk-swatch { display: flex; flex-direction: column; align-items: center; width: 12%; }
+  .swatch-block { width: 100%; aspect-ratio: 1; border-radius: 0; }
+  .swatch-name { font-size: clamp(4px, 0.6vw, 7px); color: #767676; text-align: center; margin-top: 6px; line-height: 1.3; }
+
+  /* Typography */
+  .nk-type-samples { display: flex; flex-direction: column; gap: 3%; margin-top: 4%; flex: 1; }
+  .nk-type-row { display: flex; justify-content: space-between; align-items: baseline; padding: 2% 0; border-bottom: 1px solid #1A1A1A; }
+  .nk-type-demo { flex: 1; }
+  .nk-type-meta { font-size: clamp(4px, 0.6vw, 7px); color: #767676; flex-shrink: 0; margin-left: 4%; }
+
+  /* DESIGN.md frame */
+  .md-frame { border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; overflow: hidden; background: #fff; padding: 0 2.5rem 2rem; }
+  .md-toolbar { display: flex; justify-content: flex-end; padding: 1rem 0; position: sticky; top: 48px; background: #fff; z-index: 10; border-bottom: 1px solid #e5e7f0; }
+  .copy-md-btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 6px; border: 1px solid rgba(0,0,0,0.15); background: #fff; color: var(--near-black); font-size: 13px; font-family: inherit; letter-spacing: -0.12px; cursor: pointer; transition: all 0.2s; }
+  .copy-md-btn:hover { background: var(--light-bg); border-color: rgba(0,0,0,0.3); }
+  .copy-md-btn.copied { background: #e8f5e9; border-color: #2e7d32; color: #2e7d32; }
+  .md-body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif; font-size: 15px; color: #1d1d1f; line-height: 1.6; }
+  .md-body h1 { font-size: 28px; font-weight: 600; margin: 2rem 0 1rem; color: #1d1d1f; border-bottom: 1px solid #e5e7f0; padding-bottom: 0.5rem; }
+  .md-body h2 { font-size: 22px; font-weight: 600; margin: 2rem 0 0.75rem; color: #1d1d1f; }
+  .md-body h3 { font-size: 17px; font-weight: 600; margin: 1.5rem 0 0.5rem; color: #1d1d1f; }
+  .md-body p { margin: 0.75rem 0; }
+  .md-body ul, .md-body ol { margin: 0.5rem 0; padding-left: 1.5rem; }
+  .md-body li { margin: 0.25rem 0; }
+  .md-body code { font-family: 'SF Mono','Consolas',monospace; font-size: 13px; background: #f5f5f7; padding: 2px 6px; border-radius: 4px; }
+  .md-body pre { background: #1d1d1f; color: #e0e0e0; padding: 1rem 1.25rem; border-radius: 8px; overflow-x: auto; margin: 1rem 0; }
+  .md-body pre code { background: none; padding: 0; color: inherit; font-size: 13px; }
+  .md-body table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 14px; }
+  .md-body th { text-align: left; font-weight: 600; padding: 8px 12px; border-bottom: 2px solid #e5e7f0; }
+  .md-body td { padding: 8px 12px; border-bottom: 1px solid #e5e7f0; }
+  .md-body hr { border: none; border-top: 1px solid #e5e7f0; margin: 2rem 0; }
+  .md-body strong { font-weight: 600; }
+  .md-body blockquote { border-left: 3px solid #0071e3; margin: 1rem 0; padding: 0.5rem 1rem; background: #f5f5f7; border-radius: 0 4px 4px 0; }
+
+  footer { background: var(--light-bg); padding: 2rem 0; text-align: center; border-top: 1px solid rgba(0,0,0,0.06); }
+  footer p { font-size: 12px; color: var(--text-48); }
+
+  @media (max-width: 834px) {
+    .usage-grid { flex-direction: column; }
+    .detail-header h1 { font-size: 36px; }
+  }
+</style>
+
+<script>
+  // Tab switching
+  document.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      const target = (btn as HTMLElement).dataset.tab;
+      document.getElementById('tab-' + target)?.classList.add('active');
+    });
+  });
+  // Copy command button
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const text = (btn as HTMLElement).dataset.copy || '';
+      navigator.clipboard.writeText(text);
+      btn.innerHTML = '<span style="font-size:12px;color:#CCFF00;">Copied!</span>';
+      setTimeout(() => {
+        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.5"/></svg>';
+      }, 1500);
+    });
+  });
+  // Copy DESIGN.md
+  document.getElementById('copy-md')?.addEventListener('click', () => {
+    const raw = (document.getElementById('md-raw') as HTMLTextAreaElement)?.value || '';
+    navigator.clipboard.writeText(raw);
+    const btn = document.getElementById('copy-md')!;
+    btn.classList.add('copied');
+    btn.querySelector('span')!.textContent = 'Copied!';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.querySelector('span')!.textContent = 'Copy DESIGN.md';
+    }, 2000);
+  });
+</script>

@@ -1,0 +1,394 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+import { marked } from 'marked';
+const mdPath = path.resolve('..', 'designs', 'google-io', 'DESIGN.md');
+const mdRaw = fs.readFileSync(mdPath, 'utf-8');
+const mdHtml = await marked(mdRaw);
+---
+
+<Layout title="Google I/O — slide-design-md">
+  <nav>
+    <div class="nav-inner">
+      <a href="/slide-design-md/" class="nav-back">&larr; Back to designs</a>
+      <a href="https://github.com/takumaoshiro/slide-design-md" class="nav-gh" target="_blank">GitHub</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="detail-header">
+    <div class="container">
+      <h1>Google I/O</h1>
+      <p class="detail-tagline">Material Design keynote. Colorful, playful, developer-friendly tech presentations.</p>
+    </div>
+  </section>
+
+  <!-- Usage -->
+  <section class="usage">
+    <div class="container">
+      <div class="usage-grid">
+        <div class="usage-cmd">
+          <div class="cmd-box">
+            <code>curl -o DESIGN.md https://raw.githubusercontent.com/takumaoshiro/slide-design-md/main/designs/google-io/DESIGN.md</code>
+            <button class="copy-btn" data-copy="curl -o DESIGN.md https://raw.githubusercontent.com/takumaoshiro/slide-design-md/main/designs/google-io/DESIGN.md" title="Copy">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.5"/></svg>
+            </button>
+          </div>
+          <p class="cmd-help">Run from your project root, then ask your AI assistant to use DESIGN.md for slide generation.</p>
+        </div>
+        <div class="usage-info">
+          <span class="info-badge">16:9</span>
+          <span class="info-badge">Google Sans / Roboto</span>
+          <span class="info-badge">Developer Keynote</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preview tabs -->
+  <section class="preview-section">
+    <div class="container">
+      <div class="tabs-bar">
+        <h2>Preview</h2>
+        <div class="tabs">
+          <button class="tab active" data-tab="preview">Slide Preview</button>
+          <button class="tab" data-tab="designmd">DESIGN.md</button>
+        </div>
+      </div>
+
+      <!-- Slide Preview -->
+      <div id="tab-preview" class="tab-content active">
+        <div class="slides-grid">
+
+          <!-- Cover Slide -->
+          <div class="slide-label">01 — Cover</div>
+          <div class="slide-frame">
+            <div class="s gi-s">
+              <div class="gi-cover-body">
+                <div class="gi-cover-event">Google I/O</div>
+                <div class="gi-cover-title">What's new in Android Development</div>
+                <div class="gi-cover-sub">Building better apps with Jetpack Compose and Kotlin</div>
+                <div class="gi-cover-date">May 2025 — Mountain View, CA</div>
+              </div>
+              <div class="gi-four-bar">
+                <div style="background:#4285F4;"></div>
+                <div style="background:#EA4335;"></div>
+                <div style="background:#FBBC05;"></div>
+                <div style="background:#34A853;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Slide -->
+          <div class="slide-label">02 — Content</div>
+          <div class="slide-frame">
+            <div class="s gi-s">
+              <div class="gi-inner">
+                <div class="gi-title">Compose is the modern toolkit for building native UI</div>
+                <div class="gi-subtitle">Declarative, reactive, and fully interoperable with existing Android views</div>
+                <div class="gi-content-cols">
+                  <div class="gi-card" style="border-top: 4px solid #4285F4;">
+                    <div class="gi-card-badge" style="background:#E8F0FE;color:#4285F4;">Declarative</div>
+                    <div class="gi-card-text">Describe your UI as functions of state. Compose handles the rest — no more manual view updates.</div>
+                  </div>
+                  <div class="gi-card" style="border-top: 4px solid #34A853;">
+                    <div class="gi-card-badge" style="background:#E6F4EA;color:#34A853;">Reactive</div>
+                    <div class="gi-card-text">UI automatically recomposes when data changes. Built on Kotlin coroutines and flows.</div>
+                  </div>
+                  <div class="gi-card" style="border-top: 4px solid #FBBC05;">
+                    <div class="gi-card-badge" style="background:#FEF7E0;color:#9A6D00;">Compatible</div>
+                    <div class="gi-card-text">Works alongside existing Views. Adopt incrementally in your current codebase.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Slide -->
+          <div class="slide-label">03 — Data / Table</div>
+          <div class="slide-frame">
+            <div class="s gi-s">
+              <div class="gi-inner">
+                <div class="gi-title">API adoption across the ecosystem</div>
+                <div class="gi-subtitle">Developer survey results — Q1 2025</div>
+                <div class="gi-table-wrap">
+                  <table class="gi-table">
+                    <thead>
+                      <tr>
+                        <th>API</th><th>Adoption</th><th>Satisfaction</th><th>YoY Change</th><th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Compose</td><td>67%</td><td>4.6 / 5</td><td style="color:#34A853;">+23%</td><td><span class="gi-badge" style="background:#E6F4EA;color:#34A853;">Growing</span></td></tr>
+                      <tr><td>Material 3</td><td>54%</td><td>4.3 / 5</td><td style="color:#34A853;">+18%</td><td><span class="gi-badge" style="background:#E6F4EA;color:#34A853;">Growing</span></td></tr>
+                      <tr><td>CameraX</td><td>41%</td><td>4.1 / 5</td><td style="color:#4285F4;">+7%</td><td><span class="gi-badge" style="background:#E8F0FE;color:#4285F4;">Stable</span></td></tr>
+                      <tr><td>WorkManager</td><td>72%</td><td>4.4 / 5</td><td style="color:#4285F4;">+3%</td><td><span class="gi-badge" style="background:#E8F0FE;color:#4285F4;">Stable</span></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- KPI Slide -->
+          <div class="slide-label">04 — KPI Dashboard</div>
+          <div class="slide-frame">
+            <div class="s gi-s">
+              <div class="gi-inner">
+                <div class="gi-title">Android platform by the numbers</div>
+                <div class="gi-subtitle">Global metrics — April 2025</div>
+                <div class="gi-kpis">
+                  <div class="gi-kpi">
+                    <div class="gi-kpi-num" style="color:#4285F4;">3B+</div>
+                    <div class="gi-kpi-label">Active devices</div>
+                  </div>
+                  <div class="gi-kpi">
+                    <div class="gi-kpi-num" style="color:#34A853;">2.5M</div>
+                    <div class="gi-kpi-label">Apps on Play</div>
+                  </div>
+                  <div class="gi-kpi">
+                    <div class="gi-kpi-num" style="color:#EA4335;">190+</div>
+                    <div class="gi-kpi-label">Countries</div>
+                  </div>
+                  <div class="gi-kpi">
+                    <div class="gi-kpi-num" style="color:#FBBC05;">67%</div>
+                    <div class="gi-kpi-label">Compose adoption</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Color Palette -->
+          <div class="slide-label">05 — Color Palette</div>
+          <div class="slide-frame">
+            <div class="s gi-s">
+              <div class="gi-inner">
+                <div class="gi-title">Color Palette</div>
+                <div class="gi-palette">
+                  <div class="gi-swatch"><div class="swatch-block" style="background:#4285F4;"></div><div class="swatch-name">Blue<br/>#4285F4</div></div>
+                  <div class="gi-swatch"><div class="swatch-block" style="background:#EA4335;"></div><div class="swatch-name">Red<br/>#EA4335</div></div>
+                  <div class="gi-swatch"><div class="swatch-block" style="background:#FBBC05;"></div><div class="swatch-name">Yellow<br/>#FBBC05</div></div>
+                  <div class="gi-swatch"><div class="swatch-block" style="background:#34A853;"></div><div class="swatch-name">Green<br/>#34A853</div></div>
+                  <div class="gi-swatch"><div class="swatch-block" style="background:#202124;"></div><div class="swatch-name">Near-black<br/>#202124</div></div>
+                  <div class="gi-swatch"><div class="swatch-block" style="background:#5F6368;"></div><div class="swatch-name">Body<br/>#5F6368</div></div>
+                  <div class="gi-swatch"><div class="swatch-block" style="background:#DADCE0;"></div><div class="swatch-name">Border<br/>#DADCE0</div></div>
+                  <div class="gi-swatch"><div class="swatch-block" style="background:#F8F9FA;border:1px solid #DADCE0;"></div><div class="swatch-name">Surface<br/>#F8F9FA</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Typography -->
+          <div class="slide-label">06 — Typography</div>
+          <div class="slide-frame">
+            <div class="s gi-s">
+              <div class="gi-inner">
+                <div class="gi-title">Typography Scale</div>
+                <div class="gi-type-samples">
+                  <div class="gi-type-row">
+                    <span class="gi-type-demo" style="font-family:'Google Sans','Product Sans',sans-serif;font-size:18px;font-weight:700;color:#202124;">Slide Title — 32pt Google Sans Bold</span>
+                    <span class="gi-type-meta">Bold · #202124</span>
+                  </div>
+                  <div class="gi-type-row">
+                    <span class="gi-type-demo" style="font-family:'Google Sans','Product Sans',sans-serif;font-size:12px;font-weight:500;color:#4285F4;">Section Heading — 20pt Google Sans Medium</span>
+                    <span class="gi-type-meta">Medium · Blue</span>
+                  </div>
+                  <div class="gi-type-row">
+                    <span class="gi-type-demo" style="font-family:Roboto,sans-serif;font-size:10px;color:#5F6368;">Body text — 16pt Roboto Regular. The standard reading size for content slides.</span>
+                    <span class="gi-type-meta">Regular · #5F6368</span>
+                  </div>
+                  <div class="gi-type-row">
+                    <span class="gi-type-demo" style="font-family:'Roboto Mono',monospace;font-size:9px;color:#202124;background:#F8F9FA;padding:2px 6px;border-radius:4px;">const result = await api.fetch()</span>
+                    <span class="gi-type-meta">Mono · #202124</span>
+                  </div>
+                  <div class="gi-type-row">
+                    <span class="gi-type-demo" style="font-family:Roboto,sans-serif;font-size:8px;color:#5F6368;">Caption / Note — 11pt Roboto Regular</span>
+                    <span class="gi-type-meta">Regular · #5F6368</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- DESIGN.md tab -->
+      <div id="tab-designmd" class="tab-content">
+        <div class="md-frame">
+          <div class="md-toolbar">
+            <button class="copy-md-btn" id="copy-md">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.5"/></svg>
+              <span>Copy DESIGN.md</span>
+            </button>
+          </div>
+          <div class="md-body" set:html={mdHtml} />
+        </div>
+        <textarea id="md-raw" style="display:none;">{mdRaw}</textarea>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>slide-design-md &mdash; Built for AI agents that create presentations.</p>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(0,0,0,0.8); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); height: 48px; }
+  .nav-inner { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+  .nav-back { font-size: 14px; color: #2997ff; letter-spacing: -0.224px; }
+  .nav-back:hover { text-decoration: underline; }
+  .nav-gh { font-size: 12px; color: #f5f5f7; opacity: 0.8; }
+  .container { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .detail-header { background: var(--black); padding: 3rem 0 2.5rem; }
+  .detail-header h1 { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif; font-size: 40px; font-weight: 600; color: var(--white); line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 0.5rem; }
+  .detail-tagline { font-size: 17px; color: rgba(255,255,255,0.55); letter-spacing: -0.374px; }
+
+  .usage { background: var(--black); padding: 0 0 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .usage-grid { display: flex; gap: 2rem; align-items: flex-start; }
+  .usage-cmd { flex: 1; }
+  .cmd-box { background: #0a0a0a; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 16px; display: flex; align-items: center; gap: 12px; position: relative; }
+  .cmd-box code { font-family: 'SF Mono','Consolas',monospace; font-size: 13px; color: #e0e0e0; word-break: break-all; flex: 1; }
+  .copy-btn { background: none; border: none; color: rgba(255,255,255,0.4); cursor: pointer; padding: 4px; transition: color 0.2s; flex-shrink: 0; }
+  .copy-btn:hover { color: var(--white); }
+  .cmd-help { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 0.5rem; letter-spacing: -0.12px; }
+  .usage-info { display: flex; gap: 0.5rem; flex-wrap: wrap; padding-top: 4px; }
+  .info-badge { font-size: 12px; color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 4px 10px; letter-spacing: -0.12px; }
+
+  .preview-section { background: var(--light-bg); padding: 3rem 0 4rem; }
+  .tabs-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+  .tabs-bar h2 { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif; font-size: 28px; font-weight: 600; color: var(--near-black); }
+  .tabs { display: flex; border: 1px solid rgba(0,0,0,0.15); border-radius: 8px; overflow: hidden; }
+  .tab { padding: 6px 18px; font-size: 14px; font-family: inherit; letter-spacing: -0.224px; border: none; background: transparent; color: var(--text-80); cursor: pointer; transition: all 0.2s; }
+  .tab.active { background: var(--near-black); color: var(--white); }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* Slides grid */
+  .slides-grid { display: flex; flex-direction: column; gap: 1rem; }
+  .slide-label { font-size: 12px; font-weight: 600; color: var(--text-48); letter-spacing: 0.5px; text-transform: uppercase; margin-top: 1rem; }
+  .slide-frame { border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+
+  /* Base slide */
+  .s { width: 100%; aspect-ratio: 16/9; position: relative; overflow: hidden; }
+  .gi-s { background: #FFFFFF; font-family: Roboto, 'Segoe UI', sans-serif; }
+
+  /* Cover */
+  .gi-cover-body { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; padding: 8%; gap: 3%; }
+  .gi-cover-event { font-family: 'Google Sans', 'Product Sans', sans-serif; font-size: clamp(8px, 1.2vw, 14px); font-weight: 500; color: #5F6368; letter-spacing: 1px; }
+  .gi-cover-title { font-family: 'Google Sans', 'Product Sans', sans-serif; font-size: clamp(16px, 3.2vw, 40px); font-weight: 700; color: #202124; text-align: center; line-height: 1.2; }
+  .gi-cover-sub { font-size: clamp(7px, 1.1vw, 14px); color: #5F6368; text-align: center; }
+  .gi-cover-date { font-size: clamp(6px, 0.8vw, 11px); color: #5F6368; }
+  .gi-four-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 4px; display: flex; }
+  .gi-four-bar > div { flex: 1; }
+
+  /* Inner layout */
+  .gi-inner { padding: 5% 7% 4%; height: 100%; display: flex; flex-direction: column; }
+  .gi-title { font-family: 'Google Sans', 'Product Sans', sans-serif; font-size: clamp(11px, 2.4vw, 28px); font-weight: 700; color: #202124; line-height: 1.2; }
+  .gi-subtitle { font-size: clamp(6px, 1vw, 13px); color: #5F6368; margin-top: 1.5%; }
+
+  /* Content cards */
+  .gi-content-cols { display: flex; gap: 3%; margin-top: 4%; flex: 1; }
+  .gi-card { flex: 1; background: #FFFFFF; border: 1px solid #DADCE0; border-radius: 8px; padding: 4%; display: flex; flex-direction: column; gap: 3%; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .gi-card-badge { display: inline-block; font-size: clamp(5px, 0.7vw, 9px); font-weight: 500; padding: 2px 8px; border-radius: 4px; align-self: flex-start; }
+  .gi-card-text { font-size: clamp(5px, 0.8vw, 9px); color: #5F6368; line-height: 1.5; }
+
+  /* Table */
+  .gi-table-wrap { margin-top: 3%; flex: 1; border: 1px solid #DADCE0; border-radius: 8px; overflow: hidden; }
+  .gi-table { width: 100%; border-collapse: collapse; }
+  .gi-table th { background: #F8F9FA; color: #202124; font-size: clamp(5px, 0.8vw, 9px); font-weight: 500; padding: 2% 2.5%; text-align: left; }
+  .gi-table td { font-size: clamp(5px, 0.8vw, 9px); color: #5F6368; padding: 2% 2.5%; border-top: 1px solid #DADCE0; }
+  .gi-badge { display: inline-block; font-size: clamp(4px, 0.6vw, 8px); font-weight: 500; padding: 1px 6px; border-radius: 4px; }
+
+  /* KPI */
+  .gi-kpis { display: flex; gap: 3%; margin-top: 4%; flex: 1; }
+  .gi-kpi { flex: 1; background: #FFFFFF; border: 1px solid #DADCE0; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3%; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .gi-kpi-num { font-family: 'Google Sans', 'Product Sans', sans-serif; font-size: clamp(14px, 2.8vw, 32px); font-weight: 700; }
+  .gi-kpi-label { font-size: clamp(5px, 0.8vw, 10px); color: #5F6368; margin-top: 2%; }
+
+  /* Palette */
+  .gi-palette { display: flex; flex-wrap: wrap; gap: 3%; margin-top: 4%; }
+  .gi-swatch { display: flex; flex-direction: column; align-items: center; width: 10%; }
+  .swatch-block { width: 100%; aspect-ratio: 1; border-radius: 8px; }
+  .swatch-name { font-size: clamp(4px, 0.6vw, 7px); color: #5F6368; text-align: center; margin-top: 4px; line-height: 1.3; }
+
+  /* Typography */
+  .gi-type-samples { display: flex; flex-direction: column; gap: 3%; margin-top: 3%; flex: 1; }
+  .gi-type-row { display: flex; justify-content: space-between; align-items: baseline; padding: 2% 0; border-bottom: 1px solid #F8F9FA; }
+  .gi-type-demo { flex: 1; }
+  .gi-type-meta { font-size: clamp(4px, 0.6vw, 7px); color: #5F6368; flex-shrink: 0; margin-left: 4%; }
+
+  /* DESIGN.md frame */
+  .md-frame { border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; overflow: hidden; background: #fff; padding: 0 2.5rem 2rem; }
+  .md-toolbar { display: flex; justify-content: flex-end; padding: 1rem 0; position: sticky; top: 48px; background: #fff; z-index: 10; border-bottom: 1px solid #e5e7f0; }
+  .copy-md-btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 6px; border: 1px solid rgba(0,0,0,0.15); background: #fff; color: var(--near-black); font-size: 13px; font-family: inherit; letter-spacing: -0.12px; cursor: pointer; transition: all 0.2s; }
+  .copy-md-btn:hover { background: var(--light-bg); border-color: rgba(0,0,0,0.3); }
+  .copy-md-btn.copied { background: #e8f5e9; border-color: #2e7d32; color: #2e7d32; }
+  .md-body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif; font-size: 15px; color: #1d1d1f; line-height: 1.6; }
+  .md-body h1 { font-size: 28px; font-weight: 600; margin: 2rem 0 1rem; color: #1d1d1f; border-bottom: 1px solid #e5e7f0; padding-bottom: 0.5rem; }
+  .md-body h2 { font-size: 22px; font-weight: 600; margin: 2rem 0 0.75rem; color: #1d1d1f; }
+  .md-body h3 { font-size: 17px; font-weight: 600; margin: 1.5rem 0 0.5rem; color: #1d1d1f; }
+  .md-body p { margin: 0.75rem 0; }
+  .md-body ul, .md-body ol { margin: 0.5rem 0; padding-left: 1.5rem; }
+  .md-body li { margin: 0.25rem 0; }
+  .md-body code { font-family: 'SF Mono','Consolas',monospace; font-size: 13px; background: #f5f5f7; padding: 2px 6px; border-radius: 4px; }
+  .md-body pre { background: #1d1d1f; color: #e0e0e0; padding: 1rem 1.25rem; border-radius: 8px; overflow-x: auto; margin: 1rem 0; }
+  .md-body pre code { background: none; padding: 0; color: inherit; font-size: 13px; }
+  .md-body table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 14px; }
+  .md-body th { text-align: left; font-weight: 600; padding: 8px 12px; border-bottom: 2px solid #e5e7f0; }
+  .md-body td { padding: 8px 12px; border-bottom: 1px solid #e5e7f0; }
+  .md-body hr { border: none; border-top: 1px solid #e5e7f0; margin: 2rem 0; }
+  .md-body strong { font-weight: 600; }
+  .md-body blockquote { border-left: 3px solid #0071e3; margin: 1rem 0; padding: 0.5rem 1rem; background: #f5f5f7; border-radius: 0 4px 4px 0; }
+
+  footer { background: var(--light-bg); padding: 2rem 0; text-align: center; border-top: 1px solid rgba(0,0,0,0.06); }
+  footer p { font-size: 12px; color: var(--text-48); }
+
+  @media (max-width: 834px) {
+    .usage-grid { flex-direction: column; }
+    .detail-header h1 { font-size: 32px; }
+  }
+</style>
+
+<script>
+  // Tab switching
+  document.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      const target = (btn as HTMLElement).dataset.tab;
+      document.getElementById('tab-' + target)?.classList.add('active');
+    });
+  });
+  // Copy command button
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const text = (btn as HTMLElement).dataset.copy || '';
+      navigator.clipboard.writeText(text);
+      btn.innerHTML = '<span style="font-size:12px;color:#2E7D32;">Copied!</span>';
+      setTimeout(() => {
+        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.5"/></svg>';
+      }, 1500);
+    });
+  });
+  // Copy DESIGN.md
+  document.getElementById('copy-md')?.addEventListener('click', () => {
+    const raw = (document.getElementById('md-raw') as HTMLTextAreaElement)?.value || '';
+    navigator.clipboard.writeText(raw);
+    const btn = document.getElementById('copy-md')!;
+    btn.classList.add('copied');
+    btn.querySelector('span')!.textContent = 'Copied!';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.querySelector('span')!.textContent = 'Copy DESIGN.md';
+    }, 2000);
+  });
+</script>

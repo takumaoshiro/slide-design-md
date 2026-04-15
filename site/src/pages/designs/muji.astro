@@ -1,0 +1,384 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+import { marked } from 'marked';
+const mdPath = path.resolve('..', 'designs', 'muji', 'DESIGN.md');
+const mdRaw = fs.readFileSync(mdPath, 'utf-8');
+const mdHtml = await marked(mdRaw);
+---
+
+<Layout title="Muji — slide-design-md">
+  <nav>
+    <div class="nav-inner">
+      <a href="/slide-design-md/" class="nav-back">&larr; Back to designs</a>
+      <a href="https://github.com/takumaoshiro/slide-design-md" class="nav-gh" target="_blank">GitHub</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="detail-header">
+    <div class="container">
+      <h1>Muji</h1>
+      <p class="detail-tagline">Ultra minimal. Natural tones, zen simplicity, maximum whitespace.</p>
+    </div>
+  </section>
+
+  <!-- Usage -->
+  <section class="usage">
+    <div class="container">
+      <div class="usage-grid">
+        <div class="usage-cmd">
+          <div class="cmd-box">
+            <code>curl -o DESIGN.md https://raw.githubusercontent.com/takumaoshiro/slide-design-md/main/designs/muji/DESIGN.md</code>
+            <button class="copy-btn" data-copy="curl -o DESIGN.md https://raw.githubusercontent.com/takumaoshiro/slide-design-md/main/designs/muji/DESIGN.md" title="Copy">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.5"/></svg>
+            </button>
+          </div>
+          <p class="cmd-help">Run from your project root, then ask your AI assistant to use DESIGN.md for slide generation.</p>
+        </div>
+        <div class="usage-info">
+          <span class="info-badge">16:9</span>
+          <span class="info-badge">Noto Sans JP / Helvetica Neue</span>
+          <span class="info-badge">Design</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preview tabs -->
+  <section class="preview-section">
+    <div class="container">
+      <div class="tabs-bar">
+        <h2>Preview</h2>
+        <div class="tabs">
+          <button class="tab active" data-tab="preview">Slide Preview</button>
+          <button class="tab" data-tab="designmd">DESIGN.md</button>
+        </div>
+      </div>
+
+      <!-- Slide Preview -->
+      <div id="tab-preview" class="tab-content active">
+        <div class="slides-grid">
+
+          <!-- Cover Slide -->
+          <div class="slide-label">01 — Cover</div>
+          <div class="slide-frame">
+            <div class="s mj-s">
+              <div class="mj-body center">
+                <div class="mj-h0">Product design principles</div>
+                <div class="mj-sep"></div>
+                <div class="mj-sub0">2025 Brand strategy review</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Slide -->
+          <div class="slide-label">02 — Content</div>
+          <div class="slide-frame">
+            <div class="s mj-s">
+              <div class="mj-inner">
+                <div class="mj-h1">Design philosophy</div>
+                <div class="mj-sub1">What defines the approach</div>
+                <div class="mj-hr"></div>
+                <div class="mj-cols">
+                  <div class="mj-card">
+                    <div class="mj-card-title">Simplicity</div>
+                    <div class="mj-card-text">Removing the unnecessary until only the essential remains. Every element must earn its place.</div>
+                  </div>
+                  <div class="mj-card">
+                    <div class="mj-card-title">Natural materials</div>
+                    <div class="mj-card-text">Honest textures and earth-toned palettes that connect products to the natural world.</div>
+                  </div>
+                </div>
+                <div class="mj-footer-text">01</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Slide -->
+          <div class="slide-label">03 — Data / Table</div>
+          <div class="slide-frame">
+            <div class="s mj-s">
+              <div class="mj-inner">
+                <div class="mj-h1">Category performance</div>
+                <div class="mj-sub1">FY2025 quarterly overview</div>
+                <div class="mj-hr"></div>
+                <table class="mj-table">
+                  <thead>
+                    <tr>
+                      <th>Category</th><th>Revenue</th><th>Units</th><th>Growth</th><th>Margin</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Household</td><td>$2.4B</td><td>18.2M</td><td>+6%</td><td>42%</td></tr>
+                    <tr><td>Apparel</td><td>$1.8B</td><td>12.1M</td><td>+3%</td><td>38%</td></tr>
+                    <tr><td>Food</td><td>$1.2B</td><td>28.4M</td><td style="color:#B92C28;">-2%</td><td>26%</td></tr>
+                    <tr><td>Stationery</td><td>$0.6B</td><td>42.6M</td><td>+8%</td><td>52%</td></tr>
+                  </tbody>
+                </table>
+                <div class="mj-footer-text">02</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- KPI Slide -->
+          <div class="slide-label">04 — KPI Dashboard</div>
+          <div class="slide-frame">
+            <div class="s mj-s">
+              <div class="mj-inner">
+                <div class="mj-h1">Annual metrics</div>
+                <div class="mj-sub1">FY2025 full year results</div>
+                <div class="mj-hr"></div>
+                <div class="mj-kpis">
+                  <div class="mj-kpi">
+                    <div class="mj-kpi-num">$6.0B</div>
+                    <div class="mj-kpi-label">Total revenue</div>
+                  </div>
+                  <div class="mj-kpi">
+                    <div class="mj-kpi-num" style="color:#B92C28;">1,082</div>
+                    <div class="mj-kpi-label">Global stores</div>
+                  </div>
+                  <div class="mj-kpi">
+                    <div class="mj-kpi-num">+4.2%</div>
+                    <div class="mj-kpi-label">YoY growth</div>
+                  </div>
+                </div>
+                <div class="mj-footer-text">03</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Color Palette -->
+          <div class="slide-label">05 — Color Palette</div>
+          <div class="slide-frame">
+            <div class="s mj-s">
+              <div class="mj-inner">
+                <div class="mj-h1">Color palette</div>
+                <div class="mj-hr"></div>
+                <div class="mj-palette">
+                  <div class="mj-swatch"><div class="swatch-block" style="background:#FAF8F5;"></div><div class="swatch-name">Warm White<br/>#FAF8F5</div></div>
+                  <div class="mj-swatch"><div class="swatch-block" style="background:#B92C28;"></div><div class="swatch-name">Brown-Red<br/>#B92C28</div></div>
+                  <div class="mj-swatch"><div class="swatch-block" style="background:#3C3126;"></div><div class="swatch-name">Dark Brown<br/>#3C3126</div></div>
+                  <div class="mj-swatch"><div class="swatch-block" style="background:#5C5347;"></div><div class="swatch-name">Body<br/>#5C5347</div></div>
+                  <div class="mj-swatch"><div class="swatch-block" style="background:#9E9790;"></div><div class="swatch-name">Muted<br/>#9E9790</div></div>
+                  <div class="mj-swatch"><div class="swatch-block" style="background:#E5E0DA;"></div><div class="swatch-name">Border<br/>#E5E0DA</div></div>
+                  <div class="mj-swatch"><div class="swatch-block" style="background:#F0EDE8;"></div><div class="swatch-name">Beige<br/>#F0EDE8</div></div>
+                  <div class="mj-swatch"><div class="swatch-block" style="background:#F5F3F0;"></div><div class="swatch-name">Light Beige<br/>#F5F3F0</div></div>
+                </div>
+                <div class="mj-footer-text">04</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Typography -->
+          <div class="slide-label">06 — Typography</div>
+          <div class="slide-frame">
+            <div class="s mj-s">
+              <div class="mj-inner">
+                <div class="mj-h1">Typography scale</div>
+                <div class="mj-hr"></div>
+                <div class="mj-type-samples">
+                  <div class="mj-type-row">
+                    <span class="mj-type-demo" style="font-size:clamp(12px,2.4vw,24px);font-weight:300;color:#3C3126;">Cover title — 36pt Light</span>
+                    <span class="mj-type-meta">Light 300 · #3C3126</span>
+                  </div>
+                  <div class="mj-type-row">
+                    <span class="mj-type-demo" style="font-size:clamp(10px,1.8vw,18px);font-weight:300;color:#3C3126;">Slide title — 28pt Light</span>
+                    <span class="mj-type-meta">Light 300 · #3C3126</span>
+                  </div>
+                  <div class="mj-type-row">
+                    <span class="mj-type-demo" style="font-size:clamp(8px,1.2vw,13px);font-weight:400;color:#3C3126;">Section heading — 18pt Regular</span>
+                    <span class="mj-type-meta">Regular 400 · #3C3126</span>
+                  </div>
+                  <div class="mj-type-row">
+                    <span class="mj-type-demo" style="font-size:clamp(7px,1vw,11px);font-weight:300;color:#5C5347;">Body text — 12pt Light. Comfortable reading with generous line-height.</span>
+                    <span class="mj-type-meta">Light 300 · #5C5347</span>
+                  </div>
+                  <div class="mj-type-row">
+                    <span class="mj-type-demo" style="font-size:clamp(6px,0.8vw,9px);font-weight:300;color:#9E9790;">Caption — 9pt Light</span>
+                    <span class="mj-type-meta">Light 300 · #9E9790</span>
+                  </div>
+                </div>
+                <div class="mj-footer-text">05</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- DESIGN.md tab -->
+      <div id="tab-designmd" class="tab-content">
+        <div class="md-frame">
+          <div class="md-toolbar">
+            <button class="copy-md-btn" id="copy-md">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.5"/></svg>
+              <span>Copy DESIGN.md</span>
+            </button>
+          </div>
+          <div class="md-body" set:html={mdHtml} />
+        </div>
+        <textarea id="md-raw" style="display:none;">{mdRaw}</textarea>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>slide-design-md &mdash; Built for AI agents that create presentations.</p>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(0,0,0,0.8); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); height: 48px; }
+  .nav-inner { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+  .nav-back { font-size: 14px; color: #2997ff; letter-spacing: -0.224px; }
+  .nav-back:hover { text-decoration: underline; }
+  .nav-gh { font-size: 12px; color: #f5f5f7; opacity: 0.8; }
+  .container { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .detail-header { background: var(--black); padding: 3rem 0 2.5rem; }
+  .detail-header h1 { font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 40px; font-weight: 300; color: var(--white); line-height: 1.1; letter-spacing: 1px; margin-bottom: 0.5rem; }
+  .detail-tagline { font-size: 17px; color: rgba(255,255,255,0.55); letter-spacing: -0.374px; font-weight: 300; }
+
+  .usage { background: var(--black); padding: 0 0 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .usage-grid { display: flex; gap: 2rem; align-items: flex-start; }
+  .usage-cmd { flex: 1; }
+  .cmd-box { background: #0a0a0a; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 16px; display: flex; align-items: center; gap: 12px; position: relative; }
+  .cmd-box code { font-family: 'SF Mono','Consolas',monospace; font-size: 13px; color: #e0e0e0; word-break: break-all; flex: 1; }
+  .copy-btn { background: none; border: none; color: rgba(255,255,255,0.4); cursor: pointer; padding: 4px; transition: color 0.2s; flex-shrink: 0; }
+  .copy-btn:hover { color: var(--white); }
+  .cmd-help { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 0.5rem; letter-spacing: -0.12px; }
+  .usage-info { display: flex; gap: 0.5rem; flex-wrap: wrap; padding-top: 4px; }
+  .info-badge { font-size: 12px; color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 4px 10px; letter-spacing: -0.12px; }
+
+  .preview-section { background: var(--light-bg); padding: 3rem 0 4rem; }
+  .tabs-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+  .tabs-bar h2 { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif; font-size: 28px; font-weight: 600; color: var(--near-black); }
+  .tabs { display: flex; border: 1px solid rgba(0,0,0,0.15); border-radius: 8px; overflow: hidden; }
+  .tab { padding: 6px 18px; font-size: 14px; font-family: inherit; letter-spacing: -0.224px; border: none; background: transparent; color: var(--text-80); cursor: pointer; transition: all 0.2s; }
+  .tab.active { background: var(--near-black); color: var(--white); }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* Slides grid */
+  .slides-grid { display: flex; flex-direction: column; gap: 1rem; }
+  .slide-label { font-size: 12px; font-weight: 600; color: var(--text-48); letter-spacing: 0.5px; text-transform: uppercase; margin-top: 1rem; }
+  .slide-frame { border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+
+  /* Base slide */
+  .s { width: 100%; aspect-ratio: 16/9; position: relative; overflow: hidden; }
+  .mj-s { background: #FAF8F5; font-family: 'Helvetica Neue', 'Noto Sans JP', Arial, sans-serif; }
+
+  /* Cover */
+  .mj-body.center { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; padding: 12%; gap: 3%; }
+  .mj-h0 { font-size: clamp(12px, 2.8vw, 32px); font-weight: 300; color: #3C3126; text-align: center; letter-spacing: 0.5px; line-height: 1.4; }
+  .mj-sep { width: 6%; height: 0.5px; background: #E5E0DA; }
+  .mj-sub0 { font-size: clamp(6px, 1vw, 12px); color: #9E9790; font-weight: 300; letter-spacing: 0.5px; }
+
+  /* Inner layout */
+  .mj-inner { padding: 8% 9% 6%; height: 100%; display: flex; flex-direction: column; }
+  .mj-h1 { font-size: clamp(10px, 2vw, 22px); font-weight: 300; color: #3C3126; letter-spacing: 0.5px; }
+  .mj-sub1 { font-size: clamp(6px, 0.9vw, 10px); color: #9E9790; margin-top: 1%; font-weight: 300; }
+  .mj-hr { width: 100%; height: 0.5px; background: #E5E0DA; margin: 3% 0; }
+  .mj-footer-text { margin-top: auto; text-align: right; font-size: clamp(5px, 0.7vw, 8px); color: #9E9790; font-weight: 300; }
+
+  /* Cards */
+  .mj-cols { display: flex; gap: 5%; flex: 1; margin-top: 2%; }
+  .mj-card { flex: 1; background: #F0EDE8; padding: 4% 5%; }
+  .mj-card-title { font-size: clamp(6px, 1vw, 11px); font-weight: 400; color: #3C3126; margin-bottom: 3%; letter-spacing: 0.3px; }
+  .mj-card-text { font-size: clamp(5px, 0.8vw, 9px); color: #5C5347; line-height: 1.7; font-weight: 300; }
+
+  /* Table */
+  .mj-table { width: 100%; border-collapse: collapse; margin-top: 2%; flex: 1; }
+  .mj-table th { color: #3C3126; font-size: clamp(5px, 0.8vw, 9px); font-weight: 400; padding: 2% 2%; text-align: left; border-bottom: 1px solid #E5E0DA; letter-spacing: 0.3px; }
+  .mj-table td { font-size: clamp(5px, 0.8vw, 9px); color: #5C5347; padding: 2% 2%; border-bottom: 0.5px solid #E5E0DA; font-weight: 300; }
+
+  /* KPI */
+  .mj-kpis { display: flex; gap: 5%; margin-top: 3%; flex: 1; }
+  .mj-kpi { flex: 1; background: #F0EDE8; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 4%; }
+  .mj-kpi-num { font-size: clamp(12px, 2.4vw, 28px); font-weight: 300; color: #3C3126; }
+  .mj-kpi-label { font-size: clamp(5px, 0.7vw, 8px); color: #9E9790; margin-top: 4%; font-weight: 300; letter-spacing: 0.3px; }
+
+  /* Palette */
+  .mj-palette { display: flex; flex-wrap: wrap; gap: 2.5%; margin-top: 3%; }
+  .mj-swatch { display: flex; flex-direction: column; align-items: center; width: 9%; }
+  .swatch-block { width: 100%; aspect-ratio: 1; border-radius: 0; border: 0.5px solid #E5E0DA; }
+  .swatch-name { font-size: clamp(4px, 0.55vw, 7px); color: #5C5347; text-align: center; margin-top: 4px; line-height: 1.3; font-weight: 300; }
+
+  /* Typography */
+  .mj-type-samples { display: flex; flex-direction: column; gap: 3%; margin-top: 3%; flex: 1; }
+  .mj-type-row { display: flex; justify-content: space-between; align-items: baseline; padding: 2% 0; border-bottom: 0.5px solid #E5E0DA; }
+  .mj-type-demo { flex: 1; font-family: 'Helvetica Neue', 'Noto Sans JP', Arial, sans-serif; }
+  .mj-type-meta { font-size: clamp(4px, 0.55vw, 7px); color: #9E9790; flex-shrink: 0; margin-left: 4%; font-weight: 300; }
+
+  /* DESIGN.md frame */
+  .md-frame { border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; overflow: hidden; background: #fff; padding: 0 2.5rem 2rem; }
+  .md-toolbar { display: flex; justify-content: flex-end; padding: 1rem 0; position: sticky; top: 48px; background: #fff; z-index: 10; border-bottom: 1px solid #e5e7f0; }
+  .copy-md-btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 6px; border: 1px solid rgba(0,0,0,0.15); background: #fff; color: var(--near-black); font-size: 13px; font-family: inherit; letter-spacing: -0.12px; cursor: pointer; transition: all 0.2s; }
+  .copy-md-btn:hover { background: var(--light-bg); border-color: rgba(0,0,0,0.3); }
+  .copy-md-btn.copied { background: #e8f5e9; border-color: #2e7d32; color: #2e7d32; }
+  .md-body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif; font-size: 15px; color: #1d1d1f; line-height: 1.6; }
+  .md-body h1 { font-size: 28px; font-weight: 600; margin: 2rem 0 1rem; color: #1d1d1f; border-bottom: 1px solid #e5e7f0; padding-bottom: 0.5rem; }
+  .md-body h2 { font-size: 22px; font-weight: 600; margin: 2rem 0 0.75rem; color: #1d1d1f; }
+  .md-body h3 { font-size: 17px; font-weight: 600; margin: 1.5rem 0 0.5rem; color: #1d1d1f; }
+  .md-body p { margin: 0.75rem 0; }
+  .md-body ul, .md-body ol { margin: 0.5rem 0; padding-left: 1.5rem; }
+  .md-body li { margin: 0.25rem 0; }
+  .md-body code { font-family: 'SF Mono','Consolas',monospace; font-size: 13px; background: #f5f5f7; padding: 2px 6px; border-radius: 4px; }
+  .md-body pre { background: #1d1d1f; color: #e0e0e0; padding: 1rem 1.25rem; border-radius: 8px; overflow-x: auto; margin: 1rem 0; }
+  .md-body pre code { background: none; padding: 0; color: inherit; font-size: 13px; }
+  .md-body table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 14px; }
+  .md-body th { text-align: left; font-weight: 600; padding: 8px 12px; border-bottom: 2px solid #e5e7f0; }
+  .md-body td { padding: 8px 12px; border-bottom: 1px solid #e5e7f0; }
+  .md-body hr { border: none; border-top: 1px solid #e5e7f0; margin: 2rem 0; }
+  .md-body strong { font-weight: 600; }
+  .md-body blockquote { border-left: 3px solid #0071e3; margin: 1rem 0; padding: 0.5rem 1rem; background: #f5f5f7; border-radius: 0 4px 4px 0; }
+
+  footer { background: var(--light-bg); padding: 2rem 0; text-align: center; border-top: 1px solid rgba(0,0,0,0.06); }
+  footer p { font-size: 12px; color: var(--text-48); }
+
+  @media (max-width: 834px) {
+    .usage-grid { flex-direction: column; }
+    .detail-header h1 { font-size: 32px; }
+  }
+</style>
+
+<script>
+  // Tab switching
+  document.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      const target = (btn as HTMLElement).dataset.tab;
+      document.getElementById('tab-' + target)?.classList.add('active');
+    });
+  });
+  // Copy command button
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const text = (btn as HTMLElement).dataset.copy || '';
+      navigator.clipboard.writeText(text);
+      btn.innerHTML = '<span style="font-size:12px;color:#2E7D32;">Copied!</span>';
+      setTimeout(() => {
+        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.5"/></svg>';
+      }, 1500);
+    });
+  });
+  // Copy DESIGN.md
+  document.getElementById('copy-md')?.addEventListener('click', () => {
+    const raw = (document.getElementById('md-raw') as HTMLTextAreaElement)?.value || '';
+    navigator.clipboard.writeText(raw);
+    const btn = document.getElementById('copy-md')!;
+    btn.classList.add('copied');
+    btn.querySelector('span')!.textContent = 'Copied!';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.querySelector('span')!.textContent = 'Copy DESIGN.md';
+    }, 2000);
+  });
+</script>
