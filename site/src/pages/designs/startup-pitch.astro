@@ -1,0 +1,360 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Startup Pitch — slide-design-md">
+  <nav>
+    <div class="nav-inner">
+      <a href="/slide-design-md/" class="nav-back">&larr; Back to designs</a>
+      <a href="https://github.com/takumaoshiro/slide-design-md" class="nav-gh" target="_blank">GitHub</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="detail-header">
+    <div class="container">
+      <h1>Startup Pitch</h1>
+      <p class="detail-tagline">Investor-ready decks. White-base, indigo accent, one answer per slide, metrics as heroes.</p>
+    </div>
+  </section>
+
+  <!-- Usage -->
+  <section class="usage">
+    <div class="container">
+      <div class="usage-grid">
+        <div class="usage-cmd">
+          <div class="cmd-box">
+            <code>curl -o DESIGN.md https://raw.githubusercontent.com/takumaoshiro/slide-design-md/main/designs/startup-pitch/DESIGN.md</code>
+            <button class="copy-btn" data-copy="curl -o DESIGN.md https://raw.githubusercontent.com/takumaoshiro/slide-design-md/main/designs/startup-pitch/DESIGN.md" title="Copy">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.5"/></svg>
+            </button>
+          </div>
+          <p class="cmd-help">Run from your project root, then ask your AI assistant to use DESIGN.md for slide generation.</p>
+        </div>
+        <div class="usage-info">
+          <span class="info-badge">16:9</span>
+          <span class="info-badge">Inter / Calibri</span>
+          <span class="info-badge">Pitch Deck</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preview tabs -->
+  <section class="preview-section">
+    <div class="container">
+      <div class="tabs-bar">
+        <h2>Preview</h2>
+        <div class="tabs">
+          <button class="tab active" data-tab="preview">Slide Preview</button>
+          <button class="tab" data-tab="designmd">DESIGN.md</button>
+        </div>
+      </div>
+
+      <!-- Slide Preview -->
+      <div id="tab-preview" class="tab-content active">
+        <div class="slides-grid">
+
+          <!-- Cover Slide -->
+          <div class="slide-label">01 — Cover</div>
+          <div class="slide-frame">
+            <div class="s sp-s">
+              <div class="sp-gradient-tint"></div>
+              <div class="sp-body center">
+                <div class="sp-badge">Series A</div>
+                <div class="sp-company">Acme AI</div>
+                <div class="sp-tagline">Automate enterprise workflows with intelligent agents</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Problem Slide -->
+          <div class="slide-label">02 — Problem</div>
+          <div class="slide-frame">
+            <div class="s sp-s">
+              <div class="sp-inner">
+                <div class="sp-h1">The Problem</div>
+                <div class="sp-hr"></div>
+                <div class="sp-problem-body">
+                  <div class="sp-big-stat">73% of enterprises still rely on manual workflows</div>
+                  <div class="sp-context">Legacy tools create bottlenecks across operations, costing the average mid-market company $1.2M per year in lost productivity. Teams spend more time on process than on outcomes.</div>
+                </div>
+                <div class="sp-footer-text">Acme AI</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Traction / Metrics Slide -->
+          <div class="slide-label">03 — Traction / Metrics</div>
+          <div class="slide-frame">
+            <div class="s sp-s">
+              <div class="sp-inner">
+                <div class="sp-h1">Traction</div>
+                <div class="sp-hr"></div>
+                <div class="sp-metrics">
+                  <div class="sp-metric-card">
+                    <div class="sp-metric-num" style="color:#6366F1;">$4.2M</div>
+                    <div class="sp-metric-label">ARR</div>
+                  </div>
+                  <div class="sp-metric-card">
+                    <div class="sp-metric-num" style="color:#6366F1;">312%</div>
+                    <div class="sp-metric-label">YoY Growth</div>
+                  </div>
+                  <div class="sp-metric-card">
+                    <div class="sp-metric-num" style="color:#6366F1;">1,200</div>
+                    <div class="sp-metric-label">Customers</div>
+                  </div>
+                  <div class="sp-metric-card">
+                    <div class="sp-metric-num" style="color:#6366F1;">98%</div>
+                    <div class="sp-metric-label">Retention</div>
+                  </div>
+                </div>
+                <div class="sp-footer-text">Acme AI</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Slide -->
+          <div class="slide-label">04 — Team</div>
+          <div class="slide-frame">
+            <div class="s sp-s">
+              <div class="sp-inner">
+                <div class="sp-h1">Team</div>
+                <div class="sp-hr"></div>
+                <div class="sp-team-grid">
+                  <div class="sp-member">
+                    <div class="sp-avatar">JL</div>
+                    <div class="sp-member-name">Jane Lee</div>
+                    <div class="sp-member-role">CEO</div>
+                    <div class="sp-member-caption">Ex-Google</div>
+                  </div>
+                  <div class="sp-member">
+                    <div class="sp-avatar">MK</div>
+                    <div class="sp-member-name">Marc Kim</div>
+                    <div class="sp-member-role">CTO</div>
+                    <div class="sp-member-caption">Ex-Stripe</div>
+                  </div>
+                  <div class="sp-member">
+                    <div class="sp-avatar">SR</div>
+                    <div class="sp-member-name">Sara Rao</div>
+                    <div class="sp-member-role">VP Product</div>
+                    <div class="sp-member-caption">Ex-Meta</div>
+                  </div>
+                  <div class="sp-member">
+                    <div class="sp-avatar">DT</div>
+                    <div class="sp-member-name">Dan Torres</div>
+                    <div class="sp-member-role">VP Sales</div>
+                    <div class="sp-member-caption">Ex-Salesforce</div>
+                  </div>
+                </div>
+                <div class="sp-footer-text">Acme AI</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Color Palette -->
+          <div class="slide-label">05 — Color Palette</div>
+          <div class="slide-frame">
+            <div class="s sp-s">
+              <div class="sp-inner">
+                <div class="sp-h1">Color Palette</div>
+                <div class="sp-hr"></div>
+                <div class="sp-palette">
+                  <div class="sp-swatch"><div class="swatch-block" style="background:#FFFFFF;"></div><div class="swatch-name">White<br/>#FFFFFF</div></div>
+                  <div class="sp-swatch"><div class="swatch-block" style="background:#F8F9FC;"></div><div class="swatch-name">Alt BG<br/>#F8F9FC</div></div>
+                  <div class="sp-swatch"><div class="swatch-block" style="background:#1A1A2E;"></div><div class="swatch-name">Dark<br/>#1A1A2E</div></div>
+                  <div class="sp-swatch"><div class="swatch-block" style="background:#4A4A68;"></div><div class="swatch-name">Body<br/>#4A4A68</div></div>
+                  <div class="sp-swatch"><div class="swatch-block" style="background:#9393A8;"></div><div class="swatch-name">Muted<br/>#9393A8</div></div>
+                  <div class="sp-swatch"><div class="swatch-block" style="background:#E5E7F0;"></div><div class="swatch-name">Border<br/>#E5E7F0</div></div>
+                  <div class="sp-swatch"><div class="swatch-block" style="background:#6366F1;"></div><div class="swatch-name">Accent<br/>#6366F1</div></div>
+                  <div class="sp-swatch"><div class="swatch-block" style="background:#8B5CF6;"></div><div class="swatch-name">Gradient<br/>#8B5CF6</div></div>
+                  <div class="sp-swatch"><div class="swatch-block" style="background:#10B981;"></div><div class="swatch-name">Success<br/>#10B981</div></div>
+                  <div class="sp-swatch"><div class="swatch-block" style="background:#EF4444;"></div><div class="swatch-name">Danger<br/>#EF4444</div></div>
+                </div>
+                <div class="sp-footer-text">Acme AI</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Typography -->
+          <div class="slide-label">06 — Typography</div>
+          <div class="slide-frame">
+            <div class="s sp-s">
+              <div class="sp-inner">
+                <div class="sp-h1">Typography Scale</div>
+                <div class="sp-hr"></div>
+                <div class="sp-type-samples">
+                  <div class="sp-type-row">
+                    <span class="sp-type-demo" style="font-family:'Inter',Calibri,sans-serif;font-size:clamp(14px,3vw,36px);font-weight:700;color:#1A1A2E;">Cover Title — 48pt</span>
+                    <span class="sp-type-meta">Bold &middot; #1A1A2E</span>
+                  </div>
+                  <div class="sp-type-row">
+                    <span class="sp-type-demo" style="font-family:'Inter',Calibri,sans-serif;font-size:clamp(10px,2.2vw,24px);font-weight:700;color:#1A1A2E;">Slide Title — 32pt</span>
+                    <span class="sp-type-meta">Bold &middot; #1A1A2E</span>
+                  </div>
+                  <div class="sp-type-row">
+                    <span class="sp-type-demo" style="font-family:'Inter',Calibri,sans-serif;font-size:clamp(8px,1.2vw,14px);font-weight:500;color:#4A4A68;">Subtitle — 18pt</span>
+                    <span class="sp-type-meta">Medium &middot; #4A4A68</span>
+                  </div>
+                  <div class="sp-type-row">
+                    <span class="sp-type-demo" style="font-family:'Inter',Calibri,sans-serif;font-size:clamp(7px,1.1vw,13px);font-weight:400;color:#4A4A68;">Body text — 16pt Inter / Calibri Regular</span>
+                    <span class="sp-type-meta">Regular &middot; #4A4A68</span>
+                  </div>
+                  <div class="sp-type-row">
+                    <span class="sp-type-demo" style="font-family:'Inter',Calibri,sans-serif;font-size:clamp(14px,3.5vw,42px);font-weight:700;color:#6366F1;">$4.2M — 56pt Metric</span>
+                    <span class="sp-type-meta">Bold &middot; #6366F1</span>
+                  </div>
+                  <div class="sp-type-row">
+                    <span class="sp-type-demo" style="font-family:'Inter',Calibri,sans-serif;font-size:clamp(6px,0.9vw,11px);font-weight:500;color:#9393A8;">Metric Label — 14pt</span>
+                    <span class="sp-type-meta">Medium &middot; #9393A8</span>
+                  </div>
+                  <div class="sp-type-row">
+                    <span class="sp-type-demo" style="font-family:'Inter',Calibri,sans-serif;font-size:clamp(5px,0.75vw,9px);font-weight:400;color:#4A4A68;">Table Cell — 12pt</span>
+                    <span class="sp-type-meta">Regular &middot; #4A4A68</span>
+                  </div>
+                </div>
+                <div class="sp-footer-text">Acme AI</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- DESIGN.md tab -->
+      <div id="tab-designmd" class="tab-content">
+        <div class="md-frame">
+          <iframe src="https://github.com/takumaoshiro/slide-design-md/blob/main/designs/startup-pitch/DESIGN.md" width="100%" style="height:2400px;border:none;border-radius:8px;"></iframe>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>slide-design-md &mdash; Built for AI agents that create presentations.</p>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(0,0,0,0.8); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); height: 48px; }
+  .nav-inner { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+  .nav-back { font-size: 14px; color: #2997ff; letter-spacing: -0.224px; }
+  .nav-back:hover { text-decoration: underline; }
+  .nav-gh { font-size: 12px; color: #f5f5f7; opacity: 0.8; }
+  .container { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .detail-header { background: var(--black); padding: 3rem 0 2.5rem; }
+  .detail-header h1 { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif; font-size: 40px; font-weight: 600; color: var(--white); line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 0.5rem; }
+  .detail-tagline { font-size: 17px; color: rgba(255,255,255,0.55); letter-spacing: -0.374px; }
+
+  .usage { background: var(--black); padding: 0 0 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .usage-grid { display: flex; gap: 2rem; align-items: flex-start; }
+  .usage-cmd { flex: 1; }
+  .cmd-box { background: #0a0a0a; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 16px; display: flex; align-items: center; gap: 12px; position: relative; }
+  .cmd-box code { font-family: 'SF Mono','Consolas',monospace; font-size: 13px; color: #e0e0e0; word-break: break-all; flex: 1; }
+  .copy-btn { background: none; border: none; color: rgba(255,255,255,0.4); cursor: pointer; padding: 4px; transition: color 0.2s; flex-shrink: 0; }
+  .copy-btn:hover { color: var(--white); }
+  .cmd-help { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 0.5rem; letter-spacing: -0.12px; }
+  .usage-info { display: flex; gap: 0.5rem; flex-wrap: wrap; padding-top: 4px; }
+  .info-badge { font-size: 12px; color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 4px 10px; letter-spacing: -0.12px; }
+
+  .preview-section { background: var(--light-bg); padding: 3rem 0 4rem; }
+  .tabs-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+  .tabs-bar h2 { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif; font-size: 28px; font-weight: 600; color: var(--near-black); }
+  .tabs { display: flex; border: 1px solid rgba(0,0,0,0.15); border-radius: 8px; overflow: hidden; }
+  .tab { padding: 6px 18px; font-size: 14px; font-family: inherit; letter-spacing: -0.224px; border: none; background: transparent; color: var(--text-80); cursor: pointer; transition: all 0.2s; }
+  .tab.active { background: var(--near-black); color: var(--white); }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* Slides grid */
+  .slides-grid { display: flex; flex-direction: column; gap: 1rem; }
+  .slide-label { font-size: 12px; font-weight: 600; color: var(--text-48); letter-spacing: 0.5px; text-transform: uppercase; margin-top: 1rem; }
+  .slide-frame { border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+
+  /* Base slide */
+  .s { width: 100%; aspect-ratio: 16/9; position: relative; overflow: hidden; }
+  .sp-s { background: #FFFFFF; font-family: 'Inter', Calibri, 'Segoe UI', sans-serif; }
+
+  /* Cover */
+  .sp-gradient-tint { position: absolute; top: 0; left: 0; right: 0; height: 40%; background: linear-gradient(180deg, rgba(99,102,241,0.06) 0%, rgba(139,92,246,0.02) 60%, transparent 100%); }
+  .sp-body.center { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; padding: 8%; gap: 3%; position: relative; z-index: 1; }
+  .sp-badge { font-size: clamp(6px, 0.9vw, 11px); font-weight: 600; color: #6366F1; background: #EEF2FF; border-radius: 100px; padding: 1% 3%; letter-spacing: 0.5px; }
+  .sp-company { font-size: clamp(16px, 3.5vw, 42px); font-weight: 700; color: #1A1A2E; letter-spacing: -0.5px; }
+  .sp-tagline { font-size: clamp(7px, 1.1vw, 14px); color: #9393A8; text-align: center; max-width: 70%; }
+
+  /* Inner layout */
+  .sp-inner { padding: 5% 6% 4%; height: 100%; display: flex; flex-direction: column; }
+  .sp-h1 { font-size: clamp(10px, 2.2vw, 24px); font-weight: 700; color: #1A1A2E; letter-spacing: -0.3px; }
+  .sp-hr { width: 100%; height: 1px; background: #E5E7F0; margin: 2% 0; }
+  .sp-footer-text { margin-top: auto; text-align: right; font-size: clamp(5px, 0.8vw, 8px); color: #9393A8; }
+
+  /* Problem */
+  .sp-problem-body { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 0 4%; }
+  .sp-big-stat { font-size: clamp(11px, 2.4vw, 28px); font-weight: 700; color: #1A1A2E; line-height: 1.3; margin-bottom: 3%; }
+  .sp-context { font-size: clamp(6px, 0.95vw, 12px); color: #4A4A68; line-height: 1.6; max-width: 85%; }
+
+  /* Metrics */
+  .sp-metrics { display: flex; gap: 2.5%; margin-top: 2%; flex: 1; align-items: stretch; }
+  .sp-metric-card { flex: 1; background: #F8F9FC; border: 1px solid #E5E7F0; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3% 2%; }
+  .sp-metric-num { font-size: clamp(12px, 2.8vw, 32px); font-weight: 700; }
+  .sp-metric-label { font-size: clamp(5px, 0.8vw, 10px); color: #9393A8; margin-top: 3%; font-weight: 500; letter-spacing: 0.3px; }
+
+  /* Team */
+  .sp-team-grid { display: flex; gap: 3%; margin-top: 2%; flex: 1; align-items: flex-start; padding-top: 2%; }
+  .sp-member { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4%; }
+  .sp-avatar { width: clamp(24px, 5vw, 56px); height: clamp(24px, 5vw, 56px); border-radius: 50%; background: #6366F1; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: clamp(8px, 1.6vw, 18px); font-weight: 600; letter-spacing: 0.5px; }
+  .sp-member-name { font-size: clamp(6px, 1vw, 12px); font-weight: 700; color: #1A1A2E; margin-top: 4%; }
+  .sp-member-role { font-size: clamp(5px, 0.85vw, 10px); color: #9393A8; margin-top: 1%; }
+  .sp-member-caption { font-size: clamp(5px, 0.75vw, 9px); color: #6366F1; margin-top: 2%; font-weight: 500; }
+
+  /* Palette */
+  .sp-palette { display: flex; flex-wrap: wrap; gap: 2%; margin-top: 2%; }
+  .sp-swatch { display: flex; flex-direction: column; align-items: center; width: 8.5%; }
+  .swatch-block { width: 100%; aspect-ratio: 1; border-radius: 6px; border: 1px solid #E5E7F0; }
+  .swatch-name { font-size: clamp(4px, 0.6vw, 7px); color: #4A4A68; text-align: center; margin-top: 4px; line-height: 1.3; }
+
+  /* Typography */
+  .sp-type-samples { display: flex; flex-direction: column; gap: 3%; margin-top: 2%; flex: 1; }
+  .sp-type-row { display: flex; justify-content: space-between; align-items: baseline; padding: 1.5% 0; border-bottom: 1px solid #F8F9FC; }
+  .sp-type-demo { flex: 1; }
+  .sp-type-meta { font-size: clamp(4px, 0.6vw, 7px); color: #9393A8; flex-shrink: 0; margin-left: 4%; }
+
+  /* DESIGN.md frame */
+  .md-frame { border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; overflow: hidden; background: #fff; }
+
+  footer { background: var(--light-bg); padding: 2rem 0; text-align: center; border-top: 1px solid rgba(0,0,0,0.06); }
+  footer p { font-size: 12px; color: var(--text-48); }
+
+  @media (max-width: 834px) {
+    .usage-grid { flex-direction: column; }
+    .detail-header h1 { font-size: 32px; }
+  }
+</style>
+
+<script>
+  // Tab switching
+  document.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      const target = (btn as HTMLElement).dataset.tab;
+      document.getElementById('tab-' + target)?.classList.add('active');
+    });
+  });
+  // Copy button
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const text = (btn as HTMLElement).dataset.copy || '';
+      navigator.clipboard.writeText(text);
+      btn.innerHTML = '<span style="font-size:12px;color:#10B981;">Copied!</span>';
+      setTimeout(() => {
+        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.5"/></svg>';
+      }, 1500);
+    });
+  });
+</script>

@@ -1,0 +1,361 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="CA ADVANCE — slide-design-md">
+  <nav>
+    <div class="nav-inner">
+      <a href="/slide-design-md/" class="nav-back">&larr; Back to designs</a>
+      <a href="https://github.com/takumaoshiro/slide-design-md" class="nav-gh" target="_blank">GitHub</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="detail-header">
+    <div class="container">
+      <h1>CA ADVANCE</h1>
+      <p class="detail-tagline">Corporate reporting. White-base, professional, information-dense. Minimal BtoB.</p>
+    </div>
+  </section>
+
+  <!-- Usage -->
+  <section class="usage">
+    <div class="container">
+      <div class="usage-grid">
+        <div class="usage-cmd">
+          <div class="cmd-box">
+            <code>curl -o DESIGN.md https://raw.githubusercontent.com/takumaoshiro/slide-design-md/main/designs/ca-advance/DESIGN.md</code>
+            <button class="copy-btn" data-copy="curl -o DESIGN.md https://raw.githubusercontent.com/takumaoshiro/slide-design-md/main/designs/ca-advance/DESIGN.md" title="Copy">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.5"/></svg>
+            </button>
+          </div>
+          <p class="cmd-help">Run from your project root, then ask your AI assistant to use DESIGN.md for slide generation.</p>
+        </div>
+        <div class="usage-info">
+          <span class="info-badge">16:9</span>
+          <span class="info-badge">Calibri / Arial Black</span>
+          <span class="info-badge">Corporate</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preview tabs -->
+  <section class="preview-section">
+    <div class="container">
+      <div class="tabs-bar">
+        <h2>Preview</h2>
+        <div class="tabs">
+          <button class="tab active" data-tab="preview">Slide Preview</button>
+          <button class="tab" data-tab="designmd">DESIGN.md</button>
+        </div>
+      </div>
+
+      <!-- Slide Preview -->
+      <div id="tab-preview" class="tab-content active">
+        <div class="slides-grid">
+
+          <!-- Cover Slide -->
+          <div class="slide-label">01 — Cover</div>
+          <div class="slide-frame">
+            <div class="s ca-s">
+              <div class="ca-line"></div>
+              <div class="ca-body center">
+                <div class="ca-logo-text">CA ADVANCE</div>
+                <div class="ca-h0">Monthly Performance Report</div>
+                <div class="ca-sep"></div>
+                <div class="ca-sub0">2025年4月度 — 統括向け報告資料</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Slide -->
+          <div class="slide-label">02 — Content</div>
+          <div class="slide-frame">
+            <div class="s ca-s">
+              <div class="ca-line"></div>
+              <div class="ca-inner">
+                <div class="ca-h1">現状の課題整理</div>
+                <div class="ca-sub1">組織体制・オペレーションの観点から</div>
+                <div class="ca-hr"></div>
+                <div class="ca-cols">
+                  <div class="ca-card">
+                    <div class="ca-card-bar" style="background:#C62828;"></div>
+                    <div class="ca-card-inner">
+                      <div class="ca-card-title">営業リソース不足</div>
+                      <div class="ca-card-text">現行3名体制では新規開拓と既存対応の両立が困難</div>
+                    </div>
+                  </div>
+                  <div class="ca-card">
+                    <div class="ca-card-bar" style="background:#E65100;"></div>
+                    <div class="ca-card-inner">
+                      <div class="ca-card-title">ナレッジ属人化</div>
+                      <div class="ca-card-text">運用ノウハウが個人に依存し引き継ぎコストが高い</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ca-footer-text">CA ADVANCE</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Slide -->
+          <div class="slide-label">03 — Data / Table</div>
+          <div class="slide-frame">
+            <div class="s ca-s">
+              <div class="ca-line"></div>
+              <div class="ca-inner">
+                <div class="ca-h1">媒体別パフォーマンス</div>
+                <div class="ca-sub1">2025年3月実績</div>
+                <div class="ca-hr"></div>
+                <table class="ca-table">
+                  <thead>
+                    <tr>
+                      <th>媒体</th><th>消化</th><th>CV</th><th>CPA</th><th>前月比</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Google</td><td>¥1,240K</td><td>82</td><td>¥15,122</td><td style="color:#2E7D32;">+12%</td></tr>
+                    <tr><td>Yahoo</td><td>¥860K</td><td>45</td><td>¥19,111</td><td style="color:#C62828;">-3%</td></tr>
+                    <tr><td>Meta</td><td>¥520K</td><td>38</td><td>¥13,684</td><td style="color:#2E7D32;">+8%</td></tr>
+                    <tr><td>LINE</td><td>¥310K</td><td>21</td><td>¥14,762</td><td style="color:#E65100;">±0%</td></tr>
+                  </tbody>
+                </table>
+                <div class="ca-footer-text">CA ADVANCE</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- KPI Slide -->
+          <div class="slide-label">04 — KPI Dashboard</div>
+          <div class="slide-frame">
+            <div class="s ca-s">
+              <div class="ca-line"></div>
+              <div class="ca-inner">
+                <div class="ca-h1">月次KPIサマリー</div>
+                <div class="ca-sub1">2025年3月度 全体概況</div>
+                <div class="ca-hr"></div>
+                <div class="ca-kpis">
+                  <div class="ca-kpi" style="background:#E8F5E9;">
+                    <div class="ca-kpi-num" style="color:#2E7D32;">¥2.93M</div>
+                    <div class="ca-kpi-label" style="color:#2E7D32;">総消化額</div>
+                  </div>
+                  <div class="ca-kpi" style="background:#E8EFF7;">
+                    <div class="ca-kpi-num" style="color:#1B4F8A;">186</div>
+                    <div class="ca-kpi-label" style="color:#1B4F8A;">総CV数</div>
+                  </div>
+                  <div class="ca-kpi" style="background:#E8F5E9;">
+                    <div class="ca-kpi-num" style="color:#2E7D32;">¥15,753</div>
+                    <div class="ca-kpi-label" style="color:#2E7D32;">平均CPA</div>
+                  </div>
+                  <div class="ca-kpi" style="background:#FFEBEE;">
+                    <div class="ca-kpi-num" style="color:#C62828;">92.1%</div>
+                    <div class="ca-kpi-label" style="color:#C62828;">予算消化率</div>
+                  </div>
+                </div>
+                <div class="ca-footer-text">CA ADVANCE</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Color Palette -->
+          <div class="slide-label">05 — Color Palette</div>
+          <div class="slide-frame">
+            <div class="s ca-s">
+              <div class="ca-line"></div>
+              <div class="ca-inner">
+                <div class="ca-h1">Color Palette</div>
+                <div class="ca-hr"></div>
+                <div class="ca-palette">
+                  <div class="ca-swatch"><div class="swatch-block" style="background:#1B4F8A;"></div><div class="swatch-name">Accent<br/>#1B4F8A</div></div>
+                  <div class="ca-swatch"><div class="swatch-block" style="background:#1A1A1A;"></div><div class="swatch-name">Ink<br/>#1A1A1A</div></div>
+                  <div class="ca-swatch"><div class="swatch-block" style="background:#333333;"></div><div class="swatch-name">Text<br/>#333333</div></div>
+                  <div class="ca-swatch"><div class="swatch-block" style="background:#999999;"></div><div class="swatch-name">Muted<br/>#999999</div></div>
+                  <div class="ca-swatch"><div class="swatch-block" style="background:#D0D0D0;"></div><div class="swatch-name">Border<br/>#D0D0D0</div></div>
+                  <div class="ca-swatch"><div class="swatch-block" style="background:#F5F5F5;"></div><div class="swatch-name">BG<br/>#F5F5F5</div></div>
+                  <div class="ca-swatch"><div class="swatch-block" style="background:#2E7D32;"></div><div class="swatch-name">Positive<br/>#2E7D32</div></div>
+                  <div class="ca-swatch"><div class="swatch-block" style="background:#C62828;"></div><div class="swatch-name">Negative<br/>#C62828</div></div>
+                  <div class="ca-swatch"><div class="swatch-block" style="background:#E65100;"></div><div class="swatch-name">Warning<br/>#E65100</div></div>
+                </div>
+                <div class="ca-footer-text">CA ADVANCE</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Typography -->
+          <div class="slide-label">06 — Typography</div>
+          <div class="slide-frame">
+            <div class="s ca-s">
+              <div class="ca-line"></div>
+              <div class="ca-inner">
+                <div class="ca-h1">Typography Scale</div>
+                <div class="ca-hr"></div>
+                <div class="ca-type-samples">
+                  <div class="ca-type-row">
+                    <span class="ca-type-demo" style="font-family:'Arial Black',sans-serif;font-size:16px;font-weight:900;color:#1A1A1A;">Slide Title — 22pt Arial Black</span>
+                    <span class="ca-type-meta">Bold · #1A1A1A</span>
+                  </div>
+                  <div class="ca-type-row">
+                    <span class="ca-type-demo" style="font-size:10px;font-weight:700;color:#1B4F8A;">Section Heading — 12pt Calibri Bold</span>
+                    <span class="ca-type-meta">Bold · Accent</span>
+                  </div>
+                  <div class="ca-type-row">
+                    <span class="ca-type-demo" style="font-size:9px;color:#333333;">Body text — 10pt Calibri Regular. Standard reading size for content slides.</span>
+                    <span class="ca-type-meta">Regular · #333333</span>
+                  </div>
+                  <div class="ca-type-row">
+                    <span class="ca-type-demo" style="font-size:8px;color:#666666;">Subtitle — 11pt Calibri Regular</span>
+                    <span class="ca-type-meta">Regular · #666666</span>
+                  </div>
+                  <div class="ca-type-row">
+                    <span class="ca-type-demo" style="font-size:7px;color:#999999;">Caption / Note — 8pt Calibri</span>
+                    <span class="ca-type-meta">Regular · #999999</span>
+                  </div>
+                </div>
+                <div class="ca-footer-text">CA ADVANCE</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- DESIGN.md tab -->
+      <div id="tab-designmd" class="tab-content">
+        <div class="md-frame">
+          <iframe src="https://github.com/takumaoshiro/slide-design-md/blob/main/designs/ca-advance/DESIGN.md" width="100%" style="height:2400px;border:none;border-radius:8px;"></iframe>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>slide-design-md &mdash; Built for AI agents that create presentations.</p>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(0,0,0,0.8); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); height: 48px; }
+  .nav-inner { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+  .nav-back { font-size: 14px; color: #2997ff; letter-spacing: -0.224px; }
+  .nav-back:hover { text-decoration: underline; }
+  .nav-gh { font-size: 12px; color: #f5f5f7; opacity: 0.8; }
+  .container { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .detail-header { background: var(--black); padding: 3rem 0 2.5rem; }
+  .detail-header h1 { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif; font-size: 40px; font-weight: 600; color: var(--white); line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 0.5rem; }
+  .detail-tagline { font-size: 17px; color: rgba(255,255,255,0.55); letter-spacing: -0.374px; }
+
+  .usage { background: var(--black); padding: 0 0 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .usage-grid { display: flex; gap: 2rem; align-items: flex-start; }
+  .usage-cmd { flex: 1; }
+  .cmd-box { background: #0a0a0a; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 16px; display: flex; align-items: center; gap: 12px; position: relative; }
+  .cmd-box code { font-family: 'SF Mono','Consolas',monospace; font-size: 13px; color: #e0e0e0; word-break: break-all; flex: 1; }
+  .copy-btn { background: none; border: none; color: rgba(255,255,255,0.4); cursor: pointer; padding: 4px; transition: color 0.2s; flex-shrink: 0; }
+  .copy-btn:hover { color: var(--white); }
+  .cmd-help { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 0.5rem; letter-spacing: -0.12px; }
+  .usage-info { display: flex; gap: 0.5rem; flex-wrap: wrap; padding-top: 4px; }
+  .info-badge { font-size: 12px; color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 4px 10px; letter-spacing: -0.12px; }
+
+  .preview-section { background: var(--light-bg); padding: 3rem 0 4rem; }
+  .tabs-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+  .tabs-bar h2 { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif; font-size: 28px; font-weight: 600; color: var(--near-black); }
+  .tabs { display: flex; border: 1px solid rgba(0,0,0,0.15); border-radius: 8px; overflow: hidden; }
+  .tab { padding: 6px 18px; font-size: 14px; font-family: inherit; letter-spacing: -0.224px; border: none; background: transparent; color: var(--text-80); cursor: pointer; transition: all 0.2s; }
+  .tab.active { background: var(--near-black); color: var(--white); }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* Slides grid */
+  .slides-grid { display: flex; flex-direction: column; gap: 1rem; }
+  .slide-label { font-size: 12px; font-weight: 600; color: var(--text-48); letter-spacing: 0.5px; text-transform: uppercase; margin-top: 1rem; }
+  .slide-frame { border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+
+  /* Base slide */
+  .s { width: 100%; aspect-ratio: 16/9; position: relative; overflow: hidden; }
+  .ca-s { background: #FFFFFF; font-family: Calibri, 'Segoe UI', sans-serif; }
+  .ca-line { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #1B4F8A; }
+
+  /* Cover */
+  .ca-body.center { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; padding: 8%; gap: 3%; }
+  .ca-logo-text { font-size: clamp(8px, 1.2vw, 14px); font-weight: 700; color: #1B4F8A; letter-spacing: 1px; }
+  .ca-h0 { font-family: 'Arial Black', Arial, sans-serif; font-size: clamp(14px, 3vw, 36px); font-weight: 900; color: #1A1A1A; text-align: center; }
+  .ca-sep { width: 12%; height: 2px; background: #1B4F8A; }
+  .ca-sub0 { font-size: clamp(7px, 1.1vw, 12px); color: #999999; }
+
+  /* Inner layout */
+  .ca-inner { padding: 5% 6% 4%; height: 100%; display: flex; flex-direction: column; margin-top: 3px; }
+  .ca-h1 { font-family: 'Arial Black', Arial, sans-serif; font-size: clamp(10px, 2.2vw, 22px); font-weight: 900; color: #1A1A1A; }
+  .ca-sub1 { font-size: clamp(6px, 1vw, 11px); color: #666666; margin-top: 1%; }
+  .ca-hr { width: 100%; height: 1px; background: #D0D0D0; margin: 2% 0; }
+  .ca-footer-text { margin-top: auto; text-align: right; font-size: clamp(5px, 0.8vw, 8px); color: #999999; }
+
+  /* Cards */
+  .ca-cols { display: flex; gap: 3%; flex: 1; margin-top: 1%; }
+  .ca-card { flex: 1; background: #F5F5F5; display: flex; border-radius: 2px; overflow: hidden; }
+  .ca-card-bar { width: 4px; flex-shrink: 0; }
+  .ca-card-inner { padding: 3% 4%; }
+  .ca-card-title { font-size: clamp(6px, 1.1vw, 11px); font-weight: 700; color: #1A1A1A; margin-bottom: 2%; }
+  .ca-card-text { font-size: clamp(5px, 0.85vw, 9px); color: #333333; line-height: 1.4; }
+
+  /* Table */
+  .ca-table { width: 100%; border-collapse: collapse; margin-top: 1%; flex: 1; }
+  .ca-table th { background: #1B4F8A; color: #FFFFFF; font-size: clamp(5px, 0.85vw, 9px); font-weight: 700; padding: 1.5% 2%; text-align: left; }
+  .ca-table td { font-size: clamp(5px, 0.85vw, 9px); color: #333333; padding: 1.5% 2%; border-bottom: 1px solid #D0D0D0; }
+
+  /* KPI */
+  .ca-kpis { display: flex; gap: 2.5%; margin-top: 2%; flex: 1; }
+  .ca-kpi { flex: 1; border-radius: 3px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2%; }
+  .ca-kpi-num { font-size: clamp(10px, 2.2vw, 22px); font-weight: 700; }
+  .ca-kpi-label { font-size: clamp(5px, 0.8vw, 9px); margin-top: 2%; }
+
+  /* Palette */
+  .ca-palette { display: flex; flex-wrap: wrap; gap: 2%; margin-top: 2%; }
+  .ca-swatch { display: flex; flex-direction: column; align-items: center; width: 9%; }
+  .swatch-block { width: 100%; aspect-ratio: 1; border-radius: 4px; border: 1px solid #D0D0D0; }
+  .swatch-name { font-size: clamp(4px, 0.6vw, 7px); color: #333333; text-align: center; margin-top: 4px; line-height: 1.3; }
+
+  /* Typography */
+  .ca-type-samples { display: flex; flex-direction: column; gap: 3%; margin-top: 2%; flex: 1; }
+  .ca-type-row { display: flex; justify-content: space-between; align-items: baseline; padding: 1.5% 0; border-bottom: 1px solid #F5F5F5; }
+  .ca-type-demo { flex: 1; }
+  .ca-type-meta { font-size: clamp(4px, 0.6vw, 7px); color: #999999; flex-shrink: 0; margin-left: 4%; }
+
+  /* DESIGN.md frame */
+  .md-frame { border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; overflow: hidden; background: #fff; }
+
+  footer { background: var(--light-bg); padding: 2rem 0; text-align: center; border-top: 1px solid rgba(0,0,0,0.06); }
+  footer p { font-size: 12px; color: var(--text-48); }
+
+  @media (max-width: 834px) {
+    .usage-grid { flex-direction: column; }
+    .detail-header h1 { font-size: 32px; }
+  }
+</style>
+
+<script>
+  // Tab switching
+  document.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      const target = (btn as HTMLElement).dataset.tab;
+      document.getElementById('tab-' + target)?.classList.add('active');
+    });
+  });
+  // Copy button
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const text = (btn as HTMLElement).dataset.copy || '';
+      navigator.clipboard.writeText(text);
+      btn.innerHTML = '<span style="font-size:12px;color:#2E7D32;">Copied!</span>';
+      setTimeout(() => {
+        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.5"/></svg>';
+      }, 1500);
+    });
+  });
+</script>
